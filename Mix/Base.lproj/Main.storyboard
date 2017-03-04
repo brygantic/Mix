@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Mix" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -679,15 +681,96 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Mix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="634" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-fV-rca">
+                                <rect key="frame" x="52" y="107" width="19" height="312"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="right" sliderType="linear" id="0jf-pb-ONf"/>
+                                <connections>
+                                    <action selector="updateVolumes:" target="XfG-lQ-9wD" id="6N2-uz-qe0"/>
+                                </connections>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-M3-RAi">
+                                <rect key="frame" x="122" y="107" width="19" height="312"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="right" sliderType="linear" id="TtD-ta-52s"/>
+                                <connections>
+                                    <action selector="updateVolumes:" target="XfG-lQ-9wD" id="0py-n7-rqe"/>
+                                </connections>
+                            </slider>
+                            <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYm-P5-4wu">
+                                <rect key="frame" x="578" y="107" width="19" height="312"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" continuous="YES" alignment="left" maxValue="1" doubleValue="1" tickMarkPosition="right" sliderType="linear" id="vJQ-2m-HiU"/>
+                                <connections>
+                                    <action selector="updateVolumes:" target="XfG-lQ-9wD" id="KXZ-IM-HKI"/>
+                                </connections>
+                            </slider>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgM-43-KH0">
+                                <rect key="frame" x="101" y="49" width="61" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qaq-tw-QbR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="playSound:" target="XfG-lQ-9wD" id="y4S-Us-g38"/>
+                                </connections>
+                            </button>
+                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Bo-Zy-xX3">
+                                <rect key="frame" x="37" y="83" width="49" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="Eky-cp-jx8"/>
+                            </levelIndicator>
+                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EuU-gA-Wq3">
+                                <rect key="frame" x="107" y="83" width="49" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="yjb-wQ-1Ex"/>
+                            </levelIndicator>
+                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWc-9n-CvV">
+                                <rect key="frame" x="563" y="83" width="49" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="3FT-hK-nUy"/>
+                            </levelIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-ds-R5R">
+                                <rect key="frame" x="105" y="425" width="53" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="kJP-Re-ItE">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-Vj-Plf" customClass="FaderView" customModule="Mix" customModuleProvider="target">
+                                <rect key="frame" x="185" y="56" width="91" height="361"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="AudioLevelIndicator" destination="EuU-gA-Wq3" id="u8i-eV-rXg"/>
+                        <outlet property="AudioVolumeSlider" destination="dyT-M3-RAi" id="qnE-k6-YNV"/>
+                        <outlet property="MasterFader" destination="MYm-P5-4wu" id="59F-rk-GZU"/>
+                        <outlet property="MasterLevelIndicator" destination="XWc-9n-CvV" id="3W4-GP-bG9"/>
+                        <outlet property="MicFader" destination="zAB-fV-rca" id="zLA-3J-Jvc"/>
+                        <outlet property="MicLevelIndicator" destination="1Bo-Zy-xX3" id="HTh-wR-ehn"/>
+                        <outlet property="MicSlider" destination="0jf-pb-ONf" id="Qsa-gQ-5tb"/>
+                        <outlet property="MicVolumeSlider" destination="zAB-fV-rca" id="FVT-Jv-HEV"/>
+                        <outlet property="PlayButton" destination="cgM-43-KH0" id="xBo-wT-4vJ"/>
+                        <outlet property="PlayerFader" destination="dyT-M3-RAi" id="KLI-xC-0CJ"/>
+                        <outlet property="PlayerFileName" destination="aoF-ds-R5R" id="0bk-94-BTq"/>
+                        <outlet property="PlayerFileNameLabel" destination="aoF-ds-R5R" id="yfE-pC-CuV"/>
+                        <outlet property="PlayerLevelIndicator" destination="EuU-gA-Wq3" id="Yvo-MB-Ltk"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="NRj-gY-L3I"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="152" y="760.5"/>
         </scene>
     </scenes>
 </document>
