@@ -71,8 +71,6 @@
 		E227D88D1E67551B00B24577 /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
 		E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
 		E2FA97881E6B37ED00A7E73B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		E2FA978A1E6B5B7F00A7E73B /* Bust-Out Brigade Main.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bust-Out Brigade Main.aif"; sourceTree = "<group>"; };
-		E2FA978B1E6B5B7F00A7E73B /* Bust-Out Brigade Out.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bust-Out Brigade Out.aif"; sourceTree = "<group>"; };
 		E2FA978C1E6B6A8300A7E73B /* MicFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicFader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,8 +165,6 @@
 		E227D87A1E637C8F00B24577 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2FA978A1E6B5B7F00A7E73B /* Bust-Out Brigade Main.aif */,
-				E2FA978B1E6B5B7F00A7E73B /* Bust-Out Brigade Out.aif */,
 				E227D8781E637C8600B24577 /* drumloop.wav */,
 			);
 			name = Resources;
