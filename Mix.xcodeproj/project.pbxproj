@@ -17,6 +17,9 @@
 		E227D8761E6378F900B24577 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E227D8741E6378F900B24577 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E227D8791E637C8600B24577 /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E227D8781E637C8600B24577 /* drumloop.wav */; };
 		E227D88E1E67551B00B24577 /* FaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D88D1E67551B00B24577 /* FaderView.swift */; };
+		E2FA97861E6B34E300A7E73B /* CuedAudioFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */; };
+		E2FA97891E6B37ED00A7E73B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA97881E6B37ED00A7E73B /* Queue.swift */; };
+		E2FA978D1E6B6A8300A7E73B /* MicFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA978C1E6B6A8300A7E73B /* MicFader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,11 @@
 		E227D8741E6378F900B24577 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		E227D8781E637C8600B24577 /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
 		E227D88D1E67551B00B24577 /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
+		E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
+		E2FA97881E6B37ED00A7E73B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		E2FA978A1E6B5B7F00A7E73B /* Bust-Out Brigade Main.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bust-Out Brigade Main.aif"; sourceTree = "<group>"; };
+		E2FA978B1E6B5B7F00A7E73B /* Bust-Out Brigade Out.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bust-Out Brigade Out.aif"; sourceTree = "<group>"; };
+		E2FA978C1E6B6A8300A7E73B /* MicFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicFader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 		E227D8451E6377EF00B24577 /* Mix */ = {
 			isa = PBXGroup;
 			children = (
+				E2FA97871E6B37DA00A7E73B /* DataTypes */,
 				E227D88C1E67550600B24577 /* Fader */,
 				E227D8461E6377EF00B24577 /* AppDelegate.swift */,
 				E227D8481E6377EF00B24577 /* ViewController.swift */,
@@ -158,6 +167,8 @@
 		E227D87A1E637C8F00B24577 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2FA978A1E6B5B7F00A7E73B /* Bust-Out Brigade Main.aif */,
+				E2FA978B1E6B5B7F00A7E73B /* Bust-Out Brigade Out.aif */,
 				E227D8781E637C8600B24577 /* drumloop.wav */,
 			);
 			name = Resources;
@@ -167,8 +178,18 @@
 			isa = PBXGroup;
 			children = (
 				E227D88D1E67551B00B24577 /* FaderView.swift */,
+				E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */,
+				E2FA978C1E6B6A8300A7E73B /* MicFader.swift */,
 			);
 			name = Fader;
+			sourceTree = "<group>";
+		};
+		E2FA97871E6B37DA00A7E73B /* DataTypes */ = {
+			isa = PBXGroup;
+			children = (
+				E2FA97881E6B37ED00A7E73B /* Queue.swift */,
+			);
+			name = DataTypes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +327,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FA97891E6B37ED00A7E73B /* Queue.swift in Sources */,
+				E2FA97861E6B34E300A7E73B /* CuedAudioFader.swift in Sources */,
 				E227D88E1E67551B00B24577 /* FaderView.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
+				E2FA978D1E6B6A8300A7E73B /* MicFader.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +580,7 @@
 				E227D86A1E6377EF00B24577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E227D86B1E6377EF00B24577 /* Build configuration list for PBXNativeTarget "MixTests" */ = {
 			isa = XCConfigurationList;
@@ -564,6 +589,7 @@
 				E227D86D1E6377EF00B24577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E227D86E1E6377EF00B24577 /* Build configuration list for PBXNativeTarget "MixUITests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +598,7 @@
 				E227D8701E6377EF00B24577 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

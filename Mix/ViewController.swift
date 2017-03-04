@@ -10,85 +10,42 @@ import Cocoa
 import AudioKit
 
 class ViewController: NSViewController {
-
     
     
-    @IBOutlet weak var MicFader: NSSlider!
+    @IBOutlet weak var MicFader: MicFader!
     @IBOutlet weak var MicLevelIndicator: NSLevelIndicator!
     
-    @IBOutlet weak var PlayerFader: NSSlider!
+    @IBOutlet weak var PlayerFader: CuedAudioFader!
     @IBOutlet weak var PlayerLevelIndicator: NSLevelIndicator!
-    @IBOutlet weak var PlayerFileNameLabel: NSTextField!
     @IBOutlet weak var PlayButton: NSButton!
     
-    @IBOutlet weak var MasterFader: NSSlider!
+    @IBOutlet weak var MasterFader: FaderView!
     @IBOutlet weak var MasterLevelIndicator: NSLevelIndicator!
     
-    var player: AKAudioPlayer?
-    var playerFile: AKAudioFile?
-    var mic: AKMicrophone
-    
-    var trackedMicAmplitude: AKAmplitudeTracker
-    var trackedPlayerAmplitude: AKAmplitudeTracker
+    var trackedMicAmplitude: AKAmplitudeTracker? = nil
+    var trackedPlayerAmplitude: AKAmplitudeTracker? = nil
     var trackedMixerAmplitude: AKAmplitudeTracker
     
     let mixer: AKMixer
     
-    let _initialVolume = 0.5
+    let _initialVolume = 1.0
     
     @IBAction func playSound(_ sender: NSButton) {
-        playSound()
-    }
-    
-    func playSound() {
-        if (player?.isPlaying)!
-        {
-            player?.stop()
-            PlayButton.title = "Play"
-        }
-        else
-        {
-            player?.play()
-            PlayButton.title = "Stop"
-        }
+        PlayerFader.forcePlayNext()
     }
     
     @IBAction func updateVolumes(_ sender: NSSlider)
     {
-        updateVolumes()
+        updateVolumesInternal()
     }
     
-    func updateVolumes() {
-        let masterVolume = MasterFader.doubleValue
-        
-        if player?.volume == 0 {
-            let newPlayerVolume = PlayerFader.doubleValue
-            if newPlayerVolume > 0 && !(player?.isStarted)! {
-                playSound()
-            }
-        }
-        
-        mic.volume = MicFader.doubleValue * masterVolume
-        player?.volume = PlayerFader.doubleValue * masterVolume
+    func updateVolumesInternal() {
+        mixer.volume = MasterFader.volume
     }
     
     required init?(coder: NSCoder) {
-        do {
-            playerFile = try AKAudioFile(readFileName: "drumloop.wav", baseDir: .resources)
-            
-            player = try AKAudioPlayer(file: playerFile!)
-            player?.looping = true
-            player?.volume = _initialVolume
-        } catch {
-        }
-        
         mixer = AKMixer()
         
-        mic = AKMicrophone()
-        mic.volume = _initialVolume
-        
-        trackedMicAmplitude = AKAmplitudeTracker(mic)
-        trackedPlayerAmplitude = AKAmplitudeTracker(player!)
         trackedMixerAmplitude = AKAmplitudeTracker(mixer)
         
         super.init(coder: coder)
@@ -99,24 +56,60 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MicFader.doubleValue = _initialVolume
-        PlayerFader.doubleValue = _initialVolume
-        
         configureAmplitudeTracking()
         
         wireUpAudio()
+        
+        do
+        {
+            let main = try AKAudioFile(readFileName: "../OneDrive/Radio/Beds/Bust-Out Brigade Main.aif", baseDir: .documents)
+            
+            PlayerFader.cueAudio(file: main)
+            
+            let out = try AKAudioFile(readFileName: "../OneDrive/Radio/Beds/Bust-Out Brigade Out.aif", baseDir: .documents)
+            
+            PlayerFader.cueAudio(file: out)
+            
+            PlayerFader.playOnFaderTrigger = true
+        }
+        catch {
+            print("****")
+            print("Couldn't load audio file: ")
+            print(error)
+            print("****")
+        }
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(ViewController.updateVolumesInternal),
+            name: MicFader.volumeNotificationName,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(ViewController.updateVolumesInternal),
+            name: PlayerFader.volumeNotificationName,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(ViewController.updateVolumesInternal),
+            name: MasterFader.volumeNotificationName,
+            object: nil)
 
         // Do any additional setup after loading the view.
     }
     
     func configureAmplitudeTracking() {
-        trackedMicAmplitude.start()
-        trackedPlayerAmplitude.start()
+        trackedPlayerAmplitude = AKAmplitudeTracker(PlayerFader.output)
+        trackedMicAmplitude = AKAmplitudeTracker(MicFader.output)
+        trackedMicAmplitude?.start()
+        trackedPlayerAmplitude?.start()
         trackedMixerAmplitude.start()
         
         audioLevelUpdater = AKPlaygroundLoop(every: 0.1) {
-            let micLevel = self.getMonitorLevel(from: self.trackedMicAmplitude.amplitude)
-            let playerLevel = self.getMonitorLevel(from: self.trackedPlayerAmplitude.amplitude)
+            let micLevel = self.getMonitorLevel(from: (self.trackedMicAmplitude?.amplitude)!)
+            let playerLevel = self.getMonitorLevel(from: (self.trackedPlayerAmplitude?.amplitude)!)
             let mixedOutputLevel = self.getMonitorLevel(from: self.trackedMixerAmplitude.amplitude)
             
             self.MicLevelIndicator.doubleValue = micLevel
@@ -131,10 +124,8 @@ class ViewController: NSViewController {
     }
     
     func wireUpAudio() {
-        PlayerFileNameLabel.stringValue = (playerFile?.fileName)!
-        
-        mixer.connect(trackedMicAmplitude)
-        mixer.connect(trackedPlayerAmplitude)
+        mixer.connect(trackedMicAmplitude!)
+        mixer.connect(trackedPlayerAmplitude!)
         
         AudioKit.output = trackedMixerAmplitude
         AudioKit.start()
