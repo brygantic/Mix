@@ -686,31 +686,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="634" height="481"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Bo-Zy-xX3">
-                                <rect key="frame" x="37" y="66" width="49" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="Eky-cp-jx8"/>
-                            </levelIndicator>
-                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EuU-gA-Wq3">
-                                <rect key="frame" x="128" y="66" width="49" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="yjb-wQ-1Ex"/>
-                            </levelIndicator>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-ds-R5R">
-                                <rect key="frame" x="105" y="425" width="53" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="kJP-Re-ItE">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-Vj-Plf" customClass="MicFader" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="16" y="100" width="91" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mX0-1z-9SZ" customClass="CuedAudioFader" customModule="Mix" customModuleProvider="target">
                                 <rect key="frame" x="107" y="100" width="91" height="361"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-pR-toF" customClass="MicFader" customModule="Mix" customModuleProvider="target">
+                                <rect key="frame" x="8" y="100" width="91" height="361"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgM-43-KH0">
@@ -724,28 +705,17 @@
                                     <action selector="playSound:" target="XfG-lQ-9wD" id="y4S-Us-g38"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubO-UO-QCM" customClass="FaderView" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="542" y="100" width="91" height="361"/>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-kB-LXi" customClass="MasterFader" customModule="Mix" customModuleProvider="target">
+                                <rect key="frame" x="457" y="100" width="91" height="361"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </customView>
-                            <levelIndicator verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XWc-9n-CvV">
-                                <rect key="frame" x="563" y="66" width="49" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="6" warningValue="5" criticalValue="6" id="3FT-hK-nUy"/>
-                            </levelIndicator>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="AudioLevelIndicator" destination="EuU-gA-Wq3" id="u8i-eV-rXg"/>
-                        <outlet property="MasterFader" destination="ubO-UO-QCM" id="tyw-C4-YPH"/>
-                        <outlet property="MasterLevelIndicator" destination="XWc-9n-CvV" id="3W4-GP-bG9"/>
-                        <outlet property="MicFader" destination="5gt-Vj-Plf" id="eQv-O0-x0i"/>
-                        <outlet property="MicLevelIndicator" destination="1Bo-Zy-xX3" id="HTh-wR-ehn"/>
+                        <outlet property="MasterFader" destination="HcN-kB-LXi" id="Rjy-uq-dmg"/>
+                        <outlet property="MicFader" destination="Tia-pR-toF" id="v8q-2T-E9C"/>
                         <outlet property="PlayButton" destination="cgM-43-KH0" id="xBo-wT-4vJ"/>
-                        <outlet property="PlayerFader" destination="mX0-1z-9SZ" id="Ahk-40-vca"/>
-                        <outlet property="PlayerFileName" destination="aoF-ds-R5R" id="0bk-94-BTq"/>
-                        <outlet property="PlayerFileNameLabel" destination="aoF-ds-R5R" id="yfE-pC-CuV"/>
-                        <outlet property="PlayerLevelIndicator" destination="EuU-gA-Wq3" id="Yvo-MB-Ltk"/>
+                        <outlet property="PlayerFader" destination="mX0-1z-9SZ" id="Ybi-6c-QRQ"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -22,18 +22,13 @@ class MasterFader: FaderView {
         start()
     }
     
-    override init(frame frameRect: NSRect) {
-        super.init(frame: frameRect)
-        start()
-    }
-    
     private func start()
     {
         AudioKit.output = output
         AudioKit.start()
     }
     
-    public func add(fader: FaderView)
+    public func connect(fader: FaderView)
     {
         _mixer.connect(fader.output)
     }

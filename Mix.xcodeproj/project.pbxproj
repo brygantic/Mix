@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E83222F53D2993211BC72EB /* Pods_Mix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E331BF784AA126192DB79DD5 /* Pods_Mix.framework */; };
 		E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8461E6377EF00B24577 /* AppDelegate.swift */; };
 		E227D8491E6377EF00B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8481E6377EF00B24577 /* ViewController.swift */; };
 		E227D84B1E6377EF00B24577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E227D84A1E6377EF00B24577 /* Assets.xcassets */; };
 		E227D84E1E6377EF00B24577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E227D84C1E6377EF00B24577 /* Main.storyboard */; };
 		E227D8591E6377EF00B24577 /* MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8581E6377EF00B24577 /* MixTests.swift */; };
 		E227D8641E6377EF00B24577 /* MixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8631E6377EF00B24577 /* MixUITests.swift */; };
-		E227D8751E6378F900B24577 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E227D8741E6378F900B24577 /* AudioKit.framework */; };
-		E227D8761E6378F900B24577 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E227D8741E6378F900B24577 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E227D8791E637C8600B24577 /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E227D8781E637C8600B24577 /* drumloop.wav */; };
-		E227D88E1E67551B00B24577 /* FaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D88D1E67551B00B24577 /* FaderView.swift */; };
-		E2FA97861E6B34E300A7E73B /* CuedAudioFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */; };
-		E2FA97891E6B37ED00A7E73B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA97881E6B37ED00A7E73B /* Queue.swift */; };
-		E2FA978D1E6B6A8300A7E73B /* MicFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FA978C1E6B6A8300A7E73B /* MicFader.swift */; };
+		E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */; };
+		E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94861E6C43C80009CD7B /* FaderView.swift */; };
+		E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94871E6C43C80009CD7B /* MasterFader.swift */; };
+		E2BE948E1E6C43D30009CD7B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE948D1E6C43D30009CD7B /* Queue.swift */; };
+		E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE948F1E6C46920009CD7B /* MicFader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E227D8761E6378F900B24577 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1BB7402076FEB5F5D0D36887 /* Pods-Mix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mix/Pods-Mix.debug.xcconfig"; sourceTree = "<group>"; };
 		E227D8431E6377EF00B24577 /* Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E227D8461E6377EF00B24577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E227D8481E6377EF00B24577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +66,14 @@
 		E227D85F1E6377EF00B24577 /* MixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E227D8631E6377EF00B24577 /* MixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixUITests.swift; sourceTree = "<group>"; };
 		E227D8651E6377EF00B24577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E227D8741E6378F900B24577 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		E227D8781E637C8600B24577 /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
-		E227D88D1E67551B00B24577 /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
-		E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
-		E2FA97881E6B37ED00A7E73B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		E2FA978C1E6B6A8300A7E73B /* MicFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicFader.swift; sourceTree = "<group>"; };
+		E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
+		E2BE94861E6C43C80009CD7B /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
+		E2BE94871E6C43C80009CD7B /* MasterFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterFader.swift; sourceTree = "<group>"; };
+		E2BE948D1E6C43D30009CD7B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		E2BE948F1E6C46920009CD7B /* MicFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicFader.swift; sourceTree = "<group>"; };
+		E331BF784AA126192DB79DD5 /* Pods_Mix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F907B7E9BA4ABF47ECD1FD2A /* Pods-Mix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mix/Pods-Mix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E227D8751E6378F900B24577 /* AudioKit.framework in Frameworks */,
+				9E83222F53D2993211BC72EB /* Pods_Mix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,16 +102,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0FF261D478DEC787AE1473 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1BB7402076FEB5F5D0D36887 /* Pods-Mix.debug.xcconfig */,
+				F907B7E9BA4ABF47ECD1FD2A /* Pods-Mix.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E227D83A1E6377EF00B24577 = {
 			isa = PBXGroup;
 			children = (
 				E227D87A1E637C8F00B24577 /* Resources */,
-				E227D8741E6378F900B24577 /* AudioKit.framework */,
 				E227D8451E6377EF00B24577 /* Mix */,
 				E227D8571E6377EF00B24577 /* MixTests */,
 				E227D8621E6377EF00B24577 /* MixUITests */,
 				E227D8441E6377EF00B24577 /* Products */,
 				E227D8711E63780E00B24577 /* Frameworks */,
+				7E0FF261D478DEC787AE1473 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +169,7 @@
 		E227D8711E63780E00B24577 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E331BF784AA126192DB79DD5 /* Pods_Mix.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,9 +185,10 @@
 		E227D88C1E67550600B24577 /* Fader */ = {
 			isa = PBXGroup;
 			children = (
-				E227D88D1E67551B00B24577 /* FaderView.swift */,
-				E2FA97851E6B34E300A7E73B /* CuedAudioFader.swift */,
-				E2FA978C1E6B6A8300A7E73B /* MicFader.swift */,
+				E2BE948F1E6C46920009CD7B /* MicFader.swift */,
+				E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */,
+				E2BE94861E6C43C80009CD7B /* FaderView.swift */,
+				E2BE94871E6C43C80009CD7B /* MasterFader.swift */,
 			);
 			name = Fader;
 			sourceTree = "<group>";
@@ -183,7 +196,7 @@
 		E2FA97871E6B37DA00A7E73B /* DataTypes */ = {
 			isa = PBXGroup;
 			children = (
-				E2FA97881E6B37ED00A7E73B /* Queue.swift */,
+				E2BE948D1E6C43D30009CD7B /* Queue.swift */,
 			);
 			name = DataTypes;
 			sourceTree = "<group>";
@@ -195,10 +208,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E227D8681E6377EF00B24577 /* Build configuration list for PBXNativeTarget "Mix" */;
 			buildPhases = (
+				CA5E331228E6315FC64DAE89 /* [CP] Check Pods Manifest.lock */,
 				E227D83F1E6377EF00B24577 /* Sources */,
 				E227D8401E6377EF00B24577 /* Frameworks */,
 				E227D8411E6377EF00B24577 /* Resources */,
 				E227D8771E6378F900B24577 /* Embed Frameworks */,
+				7AA81C300B92383323C80625 /* [CP] Embed Pods Frameworks */,
+				D8754C1AC5B052C8E1C6E52E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,20 +334,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AA81C300B92383323C80625 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mix/Pods-Mix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA5E331228E6315FC64DAE89 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8754C1AC5B052C8E1C6E52E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mix/Pods-Mix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E227D83F1E6377EF00B24577 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FA97891E6B37ED00A7E73B /* Queue.swift in Sources */,
-				E2FA97861E6B34E300A7E73B /* CuedAudioFader.swift in Sources */,
-				E227D88E1E67551B00B24577 /* FaderView.swift in Sources */,
+				E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */,
+				E2BE948E1E6C43D30009CD7B /* Queue.swift in Sources */,
+				E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */,
+				E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
-				E260C7121E6C404C00A65B13 /* MasterFader.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
-				E260C7101E6C404C00A65B13 /* CuedAudioFader.swift in Sources */,
-				E260C7131E6C404C00A65B13 /* MicFader.swift in Sources */,
-				E260C7111E6C404C00A65B13 /* FaderView.swift in Sources */,
+				E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +532,7 @@
 		};
 		E227D8691E6377EF00B24577 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BB7402076FEB5F5D0D36887 /* Pods-Mix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -487,6 +550,7 @@
 		};
 		E227D86A1E6377EF00B24577 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F907B7E9BA4ABF47ECD1FD2A /* Pods-Mix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
