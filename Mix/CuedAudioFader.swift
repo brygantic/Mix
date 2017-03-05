@@ -15,11 +15,12 @@ class CuedAudioFader: FaderView {
     {
         super.draw(dirtyRect)
     }
-    
+
     private var player: AKAudioPlayer? = nil
-    
+    private var _nextPlayer: AKAudioPlayer? = nil
+
     private let _audioFileQueue = Queue<AKAudioFile>()
-    
+
     public var audioFileQueue: ReadOnlyQueue<AKAudioFile>
     {
         get { return _audioFileQueue as ReadOnlyQueue<AKAudioFile> }
@@ -29,12 +30,69 @@ class CuedAudioFader: FaderView {
     {
         get { return player != nil && (player?.isPlaying)! }
     }
-    
+
     public func cueAudio(file: AKAudioFile)
     {
-        _audioFileQueue.enqueue(file)
+        if (_nextPlayer == nil)
+        {
+            do
+            {
+                _nextPlayer = try AKAudioPlayer(file: file)
+            }
+            catch
+            {
+                // Hmm
+            }
+        }
+        else
+        {
+            _audioFileQueue.enqueue(file)
+        }
     }
-    
+
+    public func tryCueAudio(absoluteFilePath path: String) -> Bool
+    {
+        let firstCharIndex = path.index(path.startIndex, offsetBy: 1)
+
+        if (path.substring(to: firstCharIndex) != "/")
+        {
+            return false
+        }
+
+        let filePath = "../../.." + path
+        do
+        {
+            let audioFile = try AKAudioFile(readFileName: filePath, baseDir: .documents)
+            cueAudio(file: audioFile)
+            return true
+        }
+        catch
+        {
+            return false
+        }
+    }
+
+    public func tryCueAudio(filePathInUserFolder path: String) -> Bool
+    {
+        let firstCharIndex = path.index(path.startIndex, offsetBy: 1)
+        if (path.substring(to: firstCharIndex) == "/")
+        {
+            return false
+        }
+
+        let filePath = "../" + path
+        do
+        {
+            let audioFile = try AKAudioFile(readFileName: filePath, baseDir: .documents)
+            cueAudio(file: audioFile)
+            return true
+        }
+        catch
+        {
+            return false
+        }
+    }
+
     public var playOnFaderTrigger: Bool = false
     {
         didSet {
@@ -60,37 +118,47 @@ class CuedAudioFader: FaderView {
             }
         }
     }
-    
+
     public func tryPlay() -> Bool
     {
         if (player != nil && (player?.isPlaying)!)
         {
             return false
         }
-        
+
         return forcePlayNext()
     }
-    
+
     public func forcePlayNext() -> Bool
     {
-        if (!_audioFileQueue.isEmpty)
+        if (!_audioFileQueue.isEmpty || _nextPlayer != nil)
         {
             do
             {
-                if (player == nil)
+                if (player == nil && _nextPlayer == nil)
                 {
-                    player = try AKAudioPlayer(file: _audioFileQueue.dequeue()!)
-                    output.connect(player!)
+                    return false
+                }
+                _mixer.connect(_nextPlayer!)
+                _nextPlayer?.start()
+                player?.stop()
+                player = _nextPlayer
+
+                if (_audioFileQueue.isEmpty)
+                {
+                    _nextPlayer = nil
                 }
                 else
                 {
-                    let newPlayer = try AKAudioPlayer(file: _audioFileQueue.dequeue()!)
-                    output.connect(newPlayer)
-                    newPlayer.start()
-                    player?.stop()
-                    player = newPlayer
+                    do
+                    {
+                        _nextPlayer = try AKAudioPlayer(file: _audioFileQueue.dequeue()!)
+                    }
+                    catch
+                    {
+                        return true
+                    }
                 }
-                player?.play()
                 return true
             }
             catch
@@ -100,7 +168,7 @@ class CuedAudioFader: FaderView {
         }
         return false
     }
-    
+
     public func stop()
     {
         player?.stop()

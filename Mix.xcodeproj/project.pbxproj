@@ -327,8 +327,11 @@
 				E2FA97861E6B34E300A7E73B /* CuedAudioFader.swift in Sources */,
 				E227D88E1E67551B00B24577 /* FaderView.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
-				E2FA978D1E6B6A8300A7E73B /* MicFader.swift in Sources */,
+				E260C7121E6C404C00A65B13 /* MasterFader.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
+				E260C7101E6C404C00A65B13 /* CuedAudioFader.swift in Sources */,
+				E260C7131E6C404C00A65B13 /* MicFader.swift in Sources */,
+				E260C7111E6C404C00A65B13 /* FaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
