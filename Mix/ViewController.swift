@@ -33,26 +33,28 @@ class ViewController: NSViewController {
         
         wireUpAudio()
         
-        do
-        {
-            let main = try AKAudioFile(readFileName: "../OneDrive/Radio/Beds/Bust-Out Brigade Main.aif", baseDir: .documents)
-            
-            PlayerFader.cueAudio(file: main)
-            
-            let out = try AKAudioFile(readFileName: "../OneDrive/Radio/Beds/Bust-Out Brigade Out.aif", baseDir: .documents)
-            
-            PlayerFader.cueAudio(file: out)
-            
-            PlayerFader.playOnFaderTrigger = true
-        }
-        catch {
-            print("****")
-            print("Couldn't load audio file: ")
-            print(error)
-            print("****")
-        }
+        openAudioWindow()
+    
+        PlayerFader.playOnFaderTrigger = true
 
         // Do any additional setup after loading the view.
+    }
+    
+    var audioWindow: NSWindow? = nil
+    var audioWindowController: NSWindowController? = nil
+    
+    func openAudioWindow()
+    {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        if let vc = storyboard.instantiateController(withIdentifier: "AudioCueingView") as? AudioCueingView
+        {
+            audioWindow = NSWindow(contentViewController: vc)
+            audioWindow?.makeKeyAndOrderFront(self)
+            audioWindowController = NSWindowController(window: audioWindow)
+            audioWindowController?.showWindow(self)
+            
+            vc.ConnectCuedAudioFader(PlayerFader, withId: 1)
+        }
     }
     
     func wireUpAudio() {

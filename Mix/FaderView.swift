@@ -9,7 +9,6 @@
 import Cocoa
 import AudioKit
 
-@IBDesignable
 class FaderView: NSView {
 
     // View
@@ -34,7 +33,7 @@ class FaderView: NSView {
     {
         get { return NSNotification.Name(faderId + ":VolumeChangedToZero") }
     }
-
+    
     // Audio out
     public let output: AKMixer = AKMixer()
     public let _mixer: AKMixer = AKMixer()

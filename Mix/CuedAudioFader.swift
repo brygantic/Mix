@@ -15,11 +15,42 @@ class CuedAudioFader: FaderView {
     {
         super.draw(dirtyRect)
     }
-
+    
+    public var playNotificationName: NSNotification.Name
+        {
+        get { return NSNotification.Name(faderId + ":Play") }
+    }
+    
+    public var stopNotificationName: NSNotification.Name
+        {
+        get { return NSNotification.Name(faderId + ":Stop") }
+    }
+    
     private var player: AKAudioPlayer? = nil
     private var _nextPlayer: AKAudioPlayer? = nil
 
     private let _audioFileQueue = Queue<AKAudioFile>()
+    
+    public var currentlyPlaying: String? {
+        get {
+            return player?.audioFile.fileName
+        }
+    }
+    
+    public var cued: [String] {
+        get
+        {
+            var cuedFileNames = audioFileQueue.getElements().map(
+                { (file: AKAudioFile) -> String in file.fileName })
+
+            if let nextPlayer = _nextPlayer
+            {
+                cuedFileNames = [nextPlayer.audioFile.fileName] + cuedFileNames
+            }
+            
+            return cuedFileNames
+        }
+    }
 
     public var audioFileQueue: ReadOnlyQueue<AKAudioFile>
     {
@@ -156,9 +187,11 @@ class CuedAudioFader: FaderView {
                     }
                     catch
                     {
+                        NotificationCenter.default.post(name: playNotificationName, object: self)
                         return true
                     }
                 }
+                NotificationCenter.default.post(name: playNotificationName, object: self)
                 return true
             }
             catch
@@ -172,5 +205,6 @@ class CuedAudioFader: FaderView {
     public func stop()
     {
         player?.stop()
+        NotificationCenter.default.post(name: stopNotificationName, object: self)
     }
 }

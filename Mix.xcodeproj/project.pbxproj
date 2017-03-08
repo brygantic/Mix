@@ -15,11 +15,14 @@
 		E227D8591E6377EF00B24577 /* MixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8581E6377EF00B24577 /* MixTests.swift */; };
 		E227D8641E6377EF00B24577 /* MixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8631E6377EF00B24577 /* MixUITests.swift */; };
 		E227D8791E637C8600B24577 /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E227D8781E637C8600B24577 /* drumloop.wav */; };
+		E23122131E6C87DE000A247D /* AudioElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23122121E6C87DE000A247D /* AudioElement.swift */; };
+		E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23122141E70A3AE000A247D /* AudioChannelSelector.swift */; };
 		E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */; };
 		E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94861E6C43C80009CD7B /* FaderView.swift */; };
 		E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94871E6C43C80009CD7B /* MasterFader.swift */; };
 		E2BE948E1E6C43D30009CD7B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE948D1E6C43D30009CD7B /* Queue.swift */; };
 		E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE948F1E6C46920009CD7B /* MicFader.swift */; };
+		E2BE94921E6C7EBD0009CD7B /* AudioCueingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94911E6C7EBD0009CD7B /* AudioCueingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +70,14 @@
 		E227D8631E6377EF00B24577 /* MixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixUITests.swift; sourceTree = "<group>"; };
 		E227D8651E6377EF00B24577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E227D8781E637C8600B24577 /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
+		E23122121E6C87DE000A247D /* AudioElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioElement.swift; sourceTree = "<group>"; };
+		E23122141E70A3AE000A247D /* AudioChannelSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioChannelSelector.swift; sourceTree = "<group>"; };
 		E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
 		E2BE94861E6C43C80009CD7B /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
 		E2BE94871E6C43C80009CD7B /* MasterFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterFader.swift; sourceTree = "<group>"; };
 		E2BE948D1E6C43D30009CD7B /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		E2BE948F1E6C46920009CD7B /* MicFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicFader.swift; sourceTree = "<group>"; };
+		E2BE94911E6C7EBD0009CD7B /* AudioCueingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioCueingView.swift; sourceTree = "<group>"; };
 		E331BF784AA126192DB79DD5 /* Pods_Mix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F907B7E9BA4ABF47ECD1FD2A /* Pods-Mix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mix.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mix/Pods-Mix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +143,7 @@
 		E227D8451E6377EF00B24577 /* Mix */ = {
 			isa = PBXGroup;
 			children = (
+				E2BE94931E6C7F410009CD7B /* AudioCueing */,
 				E2FA97871E6B37DA00A7E73B /* DataTypes */,
 				E227D88C1E67550600B24577 /* Fader */,
 				E227D8461E6377EF00B24577 /* AppDelegate.swift */,
@@ -191,6 +198,16 @@
 				E2BE94871E6C43C80009CD7B /* MasterFader.swift */,
 			);
 			name = Fader;
+			sourceTree = "<group>";
+		};
+		E2BE94931E6C7F410009CD7B /* AudioCueing */ = {
+			isa = PBXGroup;
+			children = (
+				E2BE94911E6C7EBD0009CD7B /* AudioCueingView.swift */,
+				E23122121E6C87DE000A247D /* AudioElement.swift */,
+				E23122141E70A3AE000A247D /* AudioChannelSelector.swift */,
+			);
+			name = AudioCueing;
 			sourceTree = "<group>";
 		};
 		E2FA97871E6B37DA00A7E73B /* DataTypes */ = {
@@ -389,11 +406,14 @@
 			files = (
 				E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */,
 				E2BE948E1E6C43D30009CD7B /* Queue.swift in Sources */,
+				E23122131E6C87DE000A247D /* AudioElement.swift in Sources */,
 				E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */,
 				E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
 				E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */,
+				E2BE94921E6C7EBD0009CD7B /* AudioCueingView.swift in Sources */,
+				E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
