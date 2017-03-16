@@ -9,10 +9,10 @@
 import Cocoa
 import AudioKit
 
-class FaderView: NSView {
+public class FaderView: NSView {
 
     // View
-    override var isOpaque: Bool { get { return true } }
+    override public var isOpaque: Bool { get { return true } }
 
     public let faderId = NSUUID().uuidString
 
@@ -57,8 +57,12 @@ class FaderView: NSView {
 
             let previousVolume = volume
             _volume = normalisedNewVolume
+            
             setNeedsDisplay(bounds)
+            
             _mixer.volume = volume
+            
+            self.performSelector(onMainThread: #selector(setNeedsDisplay), with: nil, waitUntilDone: true)
 
             notifier.post(name: volumeNotificationName, object: volume)
 
@@ -216,11 +220,12 @@ class FaderView: NSView {
 
     var yOffset: CGFloat? = nil
 
-    override func scrollWheel(with event: NSEvent) {
+    override public func scrollWheel(with event: NSEvent) {
         translateFader(y: -event.scrollingDeltaY)
     }
 
-    override func mouseDown(with event: NSEvent)
+    override public func
+        mouseDown(with event: NSEvent)
     {
         let point = self.convert(event.locationInWindow, from: nil)
         let y = point.y
@@ -243,7 +248,7 @@ class FaderView: NSView {
         }
     }
 
-    override func mouseUp(with event: NSEvent)
+    override public func mouseUp(with event: NSEvent)
     {
         if (yOffset != nil)
         {
@@ -253,7 +258,7 @@ class FaderView: NSView {
         }
     }
 
-    override func mouseDragged(with event: NSEvent)
+    override public func mouseDragged(with event: NSEvent)
     {
         if (yOffset != nil)
         {

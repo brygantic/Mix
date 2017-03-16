@@ -43,16 +43,16 @@ class AudioElement: NSBox {
     {
         super.draw(dirtyRect)
         
-        if audioFilePath == nil
+        if let displayName = cuedAudio?.displayName
         {
-            label.isHidden = true
+            label.frame = labelFrame
+            label.stringValue = displayName
+            label.isHidden = false
+            label.sizeToFit()
         }
         else
         {
-            label.frame = labelFrame
-            label.stringValue = GetStrippedFileName(filePath: audioFilePath)!
-            label.isHidden = false
-            label.sizeToFit()
+            label.isHidden = true
         }
 
         // Drawing code here.
@@ -71,19 +71,42 @@ class AudioElement: NSBox {
     
     public var clickFunction: (Void) -> Void = {(Void) -> Void in return}
     
-    public var audioFilePath: String? = nil
+    public var cuedAudio: CuedAudio? = nil
     
     public override func mouseDown(with event: NSEvent)
     {
         self.fillColor = highlightColor
         self.needsToDraw(bounds)
-        clickFunction()
+    }
+    
+    public override func rightMouseUp(with event: NSEvent) {
+        let openPanel = NSOpenPanel()
+        openPanel.canChooseFiles = true
+        openPanel.canChooseDirectories = false
+        openPanel.allowsMultipleSelection = false
+        openPanel.runModal()
+        
+        if let filePath = openPanel.urls.first?.absoluteString
+        {
+            do
+            {
+                let formattedFilePath = filePath.removingPercentEncoding!.replacingOccurrences(of: "file:///", with: "/")
+                
+                cuedAudio = try LocalFileCuedAudio(fromFilePath: formattedFilePath)
+                setNeedsDisplay(bounds)
+            }
+            catch
+            {
+                Swift.print(error)
+            }
+        }
     }
     
     public override func mouseUp(with event: NSEvent)
     {
         self.fillColor = defaultColor
         self.needsToDraw(bounds)
+        clickFunction()
     }
     
     private func GetStrippedFileName(filePath: String?) -> String?

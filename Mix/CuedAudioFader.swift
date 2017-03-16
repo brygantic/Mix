@@ -9,9 +9,9 @@
 import Cocoa
 import AudioKit
 
-class CuedAudioFader: FaderView {
+public class CuedAudioFader: FaderView {
 
-    override func draw(_ dirtyRect: NSRect)
+    override public func draw(_ dirtyRect: NSRect)
     {
         super.draw(dirtyRect)
     }
@@ -26,102 +26,31 @@ class CuedAudioFader: FaderView {
         get { return NSNotification.Name(faderId + ":Stop") }
     }
     
-    private var player: AKAudioPlayer? = nil
-    private var _nextPlayer: AKAudioPlayer? = nil
-
-    private let _audioFileQueue = Queue<AKAudioFile>()
+    private var currentAudio: CuedAudio? = nil
+    private var currentPlayer: AKAudioPlayer? = nil
+    
+    private let _cuedAudios = Queue<CuedAudio>()
     
     public var currentlyPlaying: String? {
-        get {
-            return player?.audioFile.fileName
-        }
+        get { return currentAudio?.displayName }
     }
     
     public var cued: [String] {
         get
         {
-            var cuedFileNames = audioFileQueue.getElements().map(
-                { (file: AKAudioFile) -> String in file.fileName })
-
-            if let nextPlayer = _nextPlayer
-            {
-                cuedFileNames = [nextPlayer.audioFile.fileName] + cuedFileNames
-            }
-            
-            return cuedFileNames
+            return _cuedAudios.getElements().map(
+                { (audio: CuedAudio) -> String in audio.displayName })
         }
-    }
-
-    public var audioFileQueue: ReadOnlyQueue<AKAudioFile>
-    {
-        get { return _audioFileQueue as ReadOnlyQueue<AKAudioFile> }
     }
     
     public var isPlaying: Bool
     {
-        get { return player != nil && (player?.isPlaying)! }
+        get { return currentPlayer?.isPlaying ?? false }
     }
-
-    public func cueAudio(file: AKAudioFile)
+    
+    public func cue(audio: CuedAudio)
     {
-        if (_nextPlayer == nil)
-        {
-            do
-            {
-                _nextPlayer = try AKAudioPlayer(file: file)
-            }
-            catch
-            {
-                // Hmm
-            }
-        }
-        else
-        {
-            _audioFileQueue.enqueue(file)
-        }
-    }
-
-    public func tryCueAudio(absoluteFilePath path: String) -> Bool
-    {
-        let firstCharIndex = path.index(path.startIndex, offsetBy: 1)
-
-        if (path.substring(to: firstCharIndex) != "/")
-        {
-            return false
-        }
-
-        let filePath = "../../.." + path
-        do
-        {
-            let audioFile = try AKAudioFile(readFileName: filePath, baseDir: .documents)
-            cueAudio(file: audioFile)
-            return true
-        }
-        catch
-        {
-            return false
-        }
-    }
-
-    public func tryCueAudio(filePathInUserFolder path: String) -> Bool
-    {
-        let firstCharIndex = path.index(path.startIndex, offsetBy: 1)
-        if (path.substring(to: firstCharIndex) == "/")
-        {
-            return false
-        }
-
-        let filePath = "../" + path
-        do
-        {
-            let audioFile = try AKAudioFile(readFileName: filePath, baseDir: .documents)
-            cueAudio(file: audioFile)
-            return true
-        }
-        catch
-        {
-            return false
-        }
+        _cuedAudios.enqueue(audio)
     }
 
     public var playOnFaderTrigger: Bool = false
@@ -152,7 +81,7 @@ class CuedAudioFader: FaderView {
 
     public func tryPlay() -> Bool
     {
-        if (player != nil && (player?.isPlaying)!)
+        if (currentPlayer?.isPlaying ?? false)
         {
             return false
         }
@@ -162,49 +91,24 @@ class CuedAudioFader: FaderView {
 
     public func forcePlayNext() -> Bool
     {
-        if (!_audioFileQueue.isEmpty || _nextPlayer != nil)
+        if _cuedAudios.front?.isReady != nil && (_cuedAudios.front?.isReady)!
         {
-            do
-            {
-                if (player == nil && _nextPlayer == nil)
-                {
-                    return false
-                }
-                _mixer.connect(_nextPlayer!)
-                _nextPlayer?.start()
-                player?.stop()
-                player = _nextPlayer
-
-                if (_audioFileQueue.isEmpty)
-                {
-                    _nextPlayer = nil
-                }
-                else
-                {
-                    do
-                    {
-                        _nextPlayer = try AKAudioPlayer(file: _audioFileQueue.dequeue()!)
-                    }
-                    catch
-                    {
-                        NotificationCenter.default.post(name: playNotificationName, object: self)
-                        return true
-                    }
-                }
-                NotificationCenter.default.post(name: playNotificationName, object: self)
-                return true
-            }
-            catch
-            {
-                return false
-            }
+            let nextAudio = _cuedAudios.dequeue()!
+            let nextPlayer = nextAudio.tryMakePlayer().player
+            _mixer.connect(nextPlayer!)
+            nextPlayer?.start()
+            currentPlayer?.stop()
+            currentAudio = nextAudio
+            currentPlayer = nextPlayer
+            NotificationCenter.default.post(name: playNotificationName, object: self)
+            return true
         }
         return false
     }
 
     public func stop()
     {
-        player?.stop()
+        currentPlayer?.stop()
         NotificationCenter.default.post(name: stopNotificationName, object: self)
     }
 }

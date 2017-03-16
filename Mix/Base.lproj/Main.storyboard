@@ -687,140 +687,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="704" height="727"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box1" translatesAutoresizingMaskIntoConstraints="NO" id="1i5-06-rVc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="637" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="HwP-be-aUH">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620851789509" green="0.81552922641490055" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box2" translatesAutoresizingMaskIntoConstraints="NO" id="dUI-Qi-bqp" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="637" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="aom-t1-Jvb">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box3" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-vO-Tc6" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="637" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="eVd-5m-6VZ">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box4" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-je-Ey3" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="533" y="637" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="xcy-Xg-aXl">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box9" translatesAutoresizingMaskIntoConstraints="NO" id="dIC-kA-9QO" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="457" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="8aY-dh-0hO">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box10" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-2f-TrV" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="457" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="X2R-25-11u">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box11" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-p2-WcR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="457" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="28Y-cX-zTy">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="11"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box12" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-lD-kYR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="533" y="457" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="L7p-7X-KSb">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-yo-dUe">
-                                <rect key="frame" x="0.0" y="344" width="704" height="5"/>
+                                <rect key="frame" x="0.0" y="327" width="704" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="kWt-nD-9R3" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="262" width="151" height="68"/>
+                                <rect key="frame" x="20" y="245" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="EWD-q0-Qhn">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -833,7 +705,7 @@
                                 </userDefinedRuntimeAttributes>
                             </box>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xtE-KO-UMM" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="262" width="151" height="68"/>
+                                <rect key="frame" x="191" y="245" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="iKP-Ip-XAR">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -845,8 +717,481 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </box>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-la-knJ">
+                                <rect key="frame" x="18" y="20" width="155" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="WVH-xV-hPW">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-Ny-FMe">
+                                <rect key="frame" x="189" y="20" width="155" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="B6k-fm-ERM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULE-XO-RGT">
+                                <rect key="frame" x="360" y="20" width="155" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="hdO-61-ikl">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgM-kU-LyP">
+                                <rect key="frame" x="-7" y="319" width="720" height="402"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <tabViewItems>
+                                    <tabViewItem label="Cart Wall" identifier="1" id="1Ka-a2-T3E">
+                                        <view key="view" id="Hjn-KL-yK5">
+                                            <rect key="frame" x="10" y="33" width="700" height="356"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box1" translatesAutoresizingMaskIntoConstraints="NO" id="1i5-06-rVc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="283" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="HwP-be-aUH">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620851789509" green="0.81552922641490055" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box2" translatesAutoresizingMaskIntoConstraints="NO" id="dUI-Qi-bqp" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="188" y="283" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="aom-t1-Jvb">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box3" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-vO-Tc6" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="359" y="283" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="eVd-5m-6VZ">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box4" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-je-Ey3" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="532" y="283" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="xcy-Xg-aXl">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXT-zN-c2a" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="193" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="68C-PO-UaI">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box6" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-LC-hA5" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="188" y="193" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="4R6-Xq-WDd">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box7" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-cQ-dIC" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="359" y="193" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="1xg-TJ-V83">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="7"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box8" translatesAutoresizingMaskIntoConstraints="NO" id="oms-JB-yK8" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="532" y="193" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="f4a-qQ-RDt">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box9" translatesAutoresizingMaskIntoConstraints="NO" id="dIC-kA-9QO" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="103" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="8aY-dh-0hO">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="9"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box10" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-2f-TrV" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="188" y="103" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="X2R-25-11u">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box11" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-p2-WcR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="359" y="103" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="28Y-cX-zTy">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="11"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box12" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-lD-kYR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="532" y="103" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="L7p-7X-KSb">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box13" translatesAutoresizingMaskIntoConstraints="NO" id="62e-ma-yIf" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="13" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="ce0-WD-KJn">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="13"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box14" translatesAutoresizingMaskIntoConstraints="NO" id="55x-S7-zXc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="188" y="13" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="VWL-dd-J5C">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box15" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-Xe-Mzu" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="359" y="13" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="qrE-Th-92H">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                                <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box16" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-0A-0fL" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
+                                                    <rect key="frame" x="532" y="13" width="151" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="6Zx-QD-box">
+                                                        <rect key="frame" x="1" y="1" width="149" height="68"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </view>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
+                                                            <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="id">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </box>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Music" identifier="2" id="hgf-Ay-Hlf">
+                                        <view key="view" ambiguous="YES" id="KKn-CD-WiH">
+                                            <rect key="frame" x="10" y="33" width="700" height="356"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdS-yy-zI2">
+                                                    <rect key="frame" x="65" y="315" width="38" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Artist" id="Ewj-Ij-DvV">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-Lh-zHr">
+                                                    <rect key="frame" x="122" y="312" width="237" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2FZ-Dy-Qsl">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubu-fC-Iuw">
+                                                    <rect key="frame" x="37" y="289" width="66" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Song Title" id="UDQ-og-Bxm">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JH-LL-eUa">
+                                                    <rect key="frame" x="122" y="284" width="237" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="JMA-U5-M6Q">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-jR-kje">
+                                                    <rect key="frame" x="116" y="248" width="70" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Load" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0Eu-Gl-Q9m">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="onLoadButtonClick:" target="uab-li-nbr" id="T3q-am-pGM"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-xz-v0D">
+                                                    <rect key="frame" x="434" y="143" width="89" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1bO-3B-5AQ">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="6t2-7r-T1r">
+                                                    <rect key="frame" x="188" y="258" width="16" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                </progressIndicator>
+                                                <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSd-OT-FxH">
+                                                    <rect key="frame" x="417" y="183" width="240" height="135"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <clipView key="contentView" ambiguous="YES" id="yKK-i8-pzA">
+                                                        <rect key="frame" x="1" y="0.0" width="238" height="134"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="gGV-MR-S6o" viewBased="YES" id="Zxa-Qa-NqS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="238" height="111"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <size key="intercellSpacing" width="3" height="2"/>
+                                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                                <tableColumns>
+                                                                    <tableColumn identifier="SongCellID" width="119" minWidth="40" maxWidth="1000" id="0zb-1p-soA">
+                                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Song">
+                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                        </tableHeaderCell>
+                                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="vjh-jN-zvg">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                        <prototypeCellViews>
+                                                                            <tableCellView id="46H-sW-34I">
+                                                                                <rect key="frame" x="1" y="1" width="119" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                <subviews>
+                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT5-kh-oXp">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="119" height="17"/>
+                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Zw1-2D-92E">
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                                <connections>
+                                                                                    <outlet property="textField" destination="WT5-kh-oXp" id="OSf-bv-1Vu"/>
+                                                                                </connections>
+                                                                            </tableCellView>
+                                                                        </prototypeCellViews>
+                                                                    </tableColumn>
+                                                                    <tableColumn identifier="ArtistCellID" width="113" minWidth="10" maxWidth="3.4028234663852886e+38" id="7OW-Ko-ysJ">
+                                                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Artist">
+                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                        </tableHeaderCell>
+                                                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="meg-wk-bhc">
+                                                                            <font key="font" metaFont="system"/>
+                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                        <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                        <prototypeCellViews>
+                                                                            <tableCellView id="oYd-9F-RPG">
+                                                                                <rect key="frame" x="123" y="1" width="117" height="17"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                <subviews>
+                                                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-n0-uOE">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="17"/>
+                                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="qSJ-Hk-egR">
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                    </textField>
+                                                                                </subviews>
+                                                                                <connections>
+                                                                                    <outlet property="textField" destination="aMs-n0-uOE" id="qe9-xn-sbo"/>
+                                                                                </connections>
+                                                                            </tableCellView>
+                                                                        </prototypeCellViews>
+                                                                    </tableColumn>
+                                                                </tableColumns>
+                                                            </tableView>
+                                                        </subviews>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qzV-3y-ujO">
+                                                        <rect key="frame" x="1" y="118" width="238" height="16"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yqH-A9-QpX">
+                                                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <tableHeaderView key="headerView" id="gGV-MR-S6o">
+                                                        <rect key="frame" x="0.0" y="0.0" width="238" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </tableHeaderView>
+                                                </scrollView>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-ei-2ui">
+                                                    <rect key="frame" x="564" y="143" width="65" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="push" title="Cue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l9J-ap-icd">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="onCueButtonClick:" target="uab-li-nbr" id="qtw-rc-7ta"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </tabViewItem>
+                                </tabViewItems>
+                            </tabView>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-2Q-3eN" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="262" width="151" height="68"/>
+                                <rect key="frame" x="362" y="245" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="kbp-pG-T4B">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -858,164 +1203,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box13" translatesAutoresizingMaskIntoConstraints="NO" id="62e-ma-yIf" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="367" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="ce0-WD-KJn">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="13"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box14" translatesAutoresizingMaskIntoConstraints="NO" id="55x-S7-zXc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="367" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="VWL-dd-J5C">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="14"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box15" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-Xe-Mzu" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="367" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="qrE-Th-92H">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box16" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-0A-0fL" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="533" y="367" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="6Zx-QD-box">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXT-zN-c2a" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="547" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="68C-PO-UaI">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box6" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-LC-hA5" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="547" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="4R6-Xq-WDd">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box7" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-cQ-dIC" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="547" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="1xg-TJ-V83">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="7"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box8" translatesAutoresizingMaskIntoConstraints="NO" id="oms-JB-yK8" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="533" y="547" width="151" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" ambiguous="YES" id="f4a-qQ-RDt">
-                                    <rect key="frame" x="1" y="1" width="149" height="68"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightColor">
-                                        <color key="value" red="0.61381620849999996" green="0.81552922640000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="id">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-la-knJ">
-                                <rect key="frame" x="18" y="20" width="155" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="WVH-xV-hPW">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-Ny-FMe">
-                                <rect key="frame" x="189" y="20" width="155" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="B6k-fm-ERM">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULE-XO-RGT">
-                                <rect key="frame" x="360" y="20" width="155" height="233"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="hdO-61-ikl">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="artistInput" destination="Upn-Lh-zHr" id="aGD-vK-QAS"/>
                         <outlet property="audioChannelSelector1" destination="kWt-nD-9R3" id="ZkP-gY-ujI"/>
                         <outlet property="audioChannelSelector2" destination="xtE-KO-UMM" id="Wgj-fh-vom"/>
                         <outlet property="audioChannelSelector3" destination="1ny-2Q-3eN" id="Iaj-xh-09B"/>
@@ -1038,12 +1229,18 @@
                         <outlet property="channel1CueList" destination="Y7a-la-knJ" id="3il-7e-zVm"/>
                         <outlet property="channel2CueList" destination="k7v-Ny-FMe" id="jb3-lI-A7H"/>
                         <outlet property="channel3CueList" destination="ULE-XO-RGT" id="35Z-iP-SIi"/>
+                        <outlet property="cueButton" destination="6gG-ei-2ui" id="0yw-2t-tYV"/>
+                        <outlet property="loadButton" destination="VeH-jR-kje" id="f0o-WF-Det"/>
+                        <outlet property="loadingIndicator" destination="6t2-7r-T1r" id="oR0-4t-WUb"/>
+                        <outlet property="onCueButtonClick" destination="6gG-ei-2ui" id="Rx9-Hi-UrY"/>
                         <outlet property="someBox" destination="1i5-06-rVc" id="51h-Sk-kup"/>
+                        <outlet property="songList" destination="Zxa-Qa-NqS" id="7To-Of-yoc"/>
+                        <outlet property="songTitleInput" destination="7JH-LL-eUa" id="4bg-Ba-v51"/>
                     </connections>
                 </viewController>
                 <customObject id="9mf-HG-Vir" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="775" y="883.5"/>
+            <point key="canvasLocation" x="773" y="883.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">

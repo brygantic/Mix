@@ -26,6 +26,8 @@ class ViewController: NSViewController {
         super.init(coder: coder)
     }
     
+    var player: AVPlayer? = nil
+    
     var audioLevelUpdater: AKPlaygroundLoop?
     
     override func viewDidLoad() {
@@ -57,9 +59,24 @@ class ViewController: NSViewController {
         }
     }
     
+    private var _midiIn: AKMIDI?
+    private var _midiListener: FaderMidiListener?
+    
     func wireUpAudio() {
         MasterFader.connect(fader: MicFader)
         MasterFader.connect(fader: PlayerFader)
+        
+        let midiListener = FaderMidiListener()
+        midiListener.attach(volumeController: 19, toFader: MicFader)
+        midiListener.attach(volumeController: 23, toFader: PlayerFader)
+        midiListener.attach(volumeController: 62, toFader: MasterFader)
+        
+        midiListener.attach(noteOff: 6, toFader: PlayerFader)
+        
+        _midiIn = AKMIDI()
+        _midiIn?.openInput()
+        _midiIn?.addListener(midiListener)
+        _midiListener = midiListener
     }
 
     override var representedObject: Any? {

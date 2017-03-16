@@ -35,8 +35,18 @@ class AudioCueingView: NSViewController
     @IBOutlet weak var channel2CueList: NSTextField!
     @IBOutlet weak var channel3CueList: NSTextField!
     
+    @IBOutlet weak var artistInput: NSTextField!
+    @IBOutlet weak var songTitleInput: NSTextField!
+    @IBOutlet weak var loadButton: NSButton!
+    @IBOutlet weak var loadingIndicator: NSProgressIndicator!
+    
+    @IBOutlet weak var songList: NSTableView!
+    @IBOutlet weak var cueButton: NSButton!
+    
     private var audioElements: [AudioElement] = []
     private var channelSelectors: [AudioChannelSelector] = []
+    
+    private var _loadedSongs = SongList()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -70,12 +80,21 @@ class AudioCueingView: NSViewController
             audioChannelSelector3
         ]
         
+        loadingIndicator.isHidden = true
+        
+        
         // For current testing
         
-        audioElements[0].audioFilePath = "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Main.aif"
-        audioElements[1].audioFilePath = "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Out.aif"
-        
-        // End
+        do
+        {
+            try audioElements[0].cuedAudio = LocalFileCuedAudio(fromFilePath: "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Main.aif")
+            try audioElements[1].cuedAudio = LocalFileCuedAudio(fromFilePath: "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Out.aif")
+            try audioElements[2].cuedAudio = RemoteFileCuedAudio(fromRemoteUrl: "http://0.0.0.0:9999/get_by_search?type=song&artist=Kaiser%20Chiefs", withName: "Kaiser Chiefs")
+        }
+        catch
+        {
+            print("Something fucked up")
+        }
         
         for (index, audioElement) in audioElements.enumerated()
         {
@@ -88,6 +107,58 @@ class AudioCueingView: NSViewController
         {
             channelSelector.onSelection = self.onChannelSelection
         }
+        
+        songList.delegate = _loadedSongs
+        songList.dataSource = _loadedSongs
+    }
+    
+    @IBAction func onLoadButtonClick(_ sender: Any)
+    {
+        loadButton.isEnabled = false
+        loadingIndicator.startAnimation(self)
+        loadingIndicator.isHidden = false
+        
+        let artist = artistInput.stringValue
+        
+        let escapedArtist = artist
+                .addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
+        
+        let songTitle = songTitleInput
+                        .stringValue
+            
+        let escapedSongTitle = songTitle.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
+        
+        let songUrl = "http://0.0.0.0:9999/get_by_search?type=song&artist=\(escapedArtist)&title=\(escapedSongTitle)"
+        
+        _loadedSongs.addSong(
+            RemoteFileCuedSong(
+                fromRemoteUrl: songUrl,
+                withTitle: songTitle,
+                andArtist: artist,
+                completionHandler: onDownloadCompleted))
+    }
+
+    @IBAction func onCueButtonClick(_ sender: Any)
+    {
+        if let channelId = selectedChannel
+        {
+            let song = _loadedSongs.getSong(atIndex: songList.selectedRow)!
+            faders[channelId]?.cue(audio: song)
+            updateCuedLists()
+        }
+    }
+    
+    private func onDownloadCompleted(_: URL?, _: URLResponse?, error: Error?)
+    {
+        loadButton.isEnabled = true
+        performSelector(onMainThread: #selector(finishLoading), with: nil, waitUntilDone: false)
+        songList.reloadData()
+    }
+    
+    @objc private func finishLoading()
+    {
+        loadingIndicator.stopAnimation(self)
+        loadingIndicator.isHidden = true
     }
     
     private var faders: [Int: CuedAudioFader] = [Int: CuedAudioFader]()
@@ -95,17 +166,24 @@ class AudioCueingView: NSViewController
     public func ConnectCuedAudioFader(_ fader: CuedAudioFader, withId id: Int)
     {
         faders[id] = fader
+        
         NotificationCenter.default.addObserver(
             self,
-            selector: #selector(AudioCueingView.updateCuedLists),
+            selector: #selector(updateCuedLists),
             name: fader.playNotificationName,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(updateCuedLists),
+            name: fader.stopNotificationName,
             object: nil)
     }
     
     private func onAudioElementClick(withAudioElementIndex index: Int) {
         if let channelId = selectedChannel
         {
-            faders[channelId]?.tryCueAudio(absoluteFilePath: audioElements[index].audioFilePath!)
+            faders[channelId]?.cue(audio: audioElements[index].cuedAudio!)
         }
         updateCuedLists()
     }

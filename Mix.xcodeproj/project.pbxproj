@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9E83222F53D2993211BC72EB /* Pods_Mix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E331BF784AA126192DB79DD5 /* Pods_Mix.framework */; };
+		E200F5311E7584F4000C2F2A /* CuedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5301E7584F4000C2F2A /* CuedAudio.swift */; };
+		E200F5331E7588F6000C2F2A /* LocalFileCuedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5321E7588F6000C2F2A /* LocalFileCuedAudio.swift */; };
+		E200F5351E758978000C2F2A /* RemoteFileCuedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5341E758978000C2F2A /* RemoteFileCuedAudio.swift */; };
+		E200F5391E773E37000C2F2A /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5381E773E37000C2F2A /* SongList.swift */; };
+		E200F53B1E774125000C2F2A /* RemoteFileCuedSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F53A1E774125000C2F2A /* RemoteFileCuedSong.swift */; };
+		E200F53E1E7B1F8E000C2F2A /* FaderMidiListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */; };
 		E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8461E6377EF00B24577 /* AppDelegate.swift */; };
 		E227D8491E6377EF00B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8481E6377EF00B24577 /* ViewController.swift */; };
 		E227D84B1E6377EF00B24577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E227D84A1E6377EF00B24577 /* Assets.xcassets */; };
@@ -57,6 +63,12 @@
 
 /* Begin PBXFileReference section */
 		1BB7402076FEB5F5D0D36887 /* Pods-Mix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mix/Pods-Mix.debug.xcconfig"; sourceTree = "<group>"; };
+		E200F5301E7584F4000C2F2A /* CuedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudio.swift; sourceTree = "<group>"; };
+		E200F5321E7588F6000C2F2A /* LocalFileCuedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalFileCuedAudio.swift; sourceTree = "<group>"; };
+		E200F5341E758978000C2F2A /* RemoteFileCuedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteFileCuedAudio.swift; sourceTree = "<group>"; };
+		E200F5381E773E37000C2F2A /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
+		E200F53A1E774125000C2F2A /* RemoteFileCuedSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteFileCuedSong.swift; sourceTree = "<group>"; };
+		E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderMidiListener.swift; sourceTree = "<group>"; };
 		E227D8431E6377EF00B24577 /* Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E227D8461E6377EF00B24577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E227D8481E6377EF00B24577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +129,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E200F53C1E7B1F79000C2F2A /* Midi */ = {
+			isa = PBXGroup;
+			children = (
+				E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */,
+			);
+			name = Midi;
+			sourceTree = "<group>";
+		};
 		E227D83A1E6377EF00B24577 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +163,7 @@
 		E227D8451E6377EF00B24577 /* Mix */ = {
 			isa = PBXGroup;
 			children = (
+				E200F53C1E7B1F79000C2F2A /* Midi */,
 				E2BE94931E6C7F410009CD7B /* AudioCueing */,
 				E2FA97871E6B37DA00A7E73B /* DataTypes */,
 				E227D88C1E67550600B24577 /* Fader */,
@@ -206,6 +227,11 @@
 				E2BE94911E6C7EBD0009CD7B /* AudioCueingView.swift */,
 				E23122121E6C87DE000A247D /* AudioElement.swift */,
 				E23122141E70A3AE000A247D /* AudioChannelSelector.swift */,
+				E200F5301E7584F4000C2F2A /* CuedAudio.swift */,
+				E200F5321E7588F6000C2F2A /* LocalFileCuedAudio.swift */,
+				E200F5341E758978000C2F2A /* RemoteFileCuedAudio.swift */,
+				E200F5381E773E37000C2F2A /* SongList.swift */,
+				E200F53A1E774125000C2F2A /* RemoteFileCuedSong.swift */,
 			);
 			name = AudioCueing;
 			sourceTree = "<group>";
@@ -406,14 +432,20 @@
 			files = (
 				E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */,
 				E2BE948E1E6C43D30009CD7B /* Queue.swift in Sources */,
+				E200F5391E773E37000C2F2A /* SongList.swift in Sources */,
+				E200F5311E7584F4000C2F2A /* CuedAudio.swift in Sources */,
 				E23122131E6C87DE000A247D /* AudioElement.swift in Sources */,
 				E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */,
+				E200F53E1E7B1F8E000C2F2A /* FaderMidiListener.swift in Sources */,
+				E200F5331E7588F6000C2F2A /* LocalFileCuedAudio.swift in Sources */,
 				E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
 				E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */,
+				E200F53B1E774125000C2F2A /* RemoteFileCuedSong.swift in Sources */,
 				E2BE94921E6C7EBD0009CD7B /* AudioCueingView.swift in Sources */,
 				E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */,
+				E200F5351E758978000C2F2A /* RemoteFileCuedAudio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
