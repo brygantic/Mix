@@ -14,6 +14,12 @@ public class CuedAudioFader: FaderView {
     override public func draw(_ dirtyRect: NSRect)
     {
         super.draw(dirtyRect)
+        Timer.scheduledTimer(
+            timeInterval: 0.1,
+            target: self,
+            selector: #selector(checkIfStopped),
+            userInfo: nil,
+            repeats: true)
     }
     
     public var playNotificationName: NSNotification.Name
@@ -72,7 +78,7 @@ public class CuedAudioFader: FaderView {
             {
                 NotificationCenter.default.addObserver(
                     self,
-                    selector: #selector(CuedAudioFader.tryPlay),
+                    selector: #selector(tryPlay),
                     name: volumeChangedFromZeroNotificationName,
                     object: nil)
             }
@@ -110,5 +116,22 @@ public class CuedAudioFader: FaderView {
     {
         currentPlayer?.stop()
         NotificationCenter.default.post(name: stopNotificationName, object: self)
+    }
+    
+    private var _wasPlayingLastTimeChecked: Bool = false
+    @objc private func checkIfStopped()
+    {
+        let isPlayingCaptured = isPlaying
+        
+        if _wasPlayingLastTimeChecked
+        {
+            if !isPlayingCaptured
+            {
+                currentPlayer = nil
+                currentAudio = nil
+                NotificationCenter.default.post(name: stopNotificationName, object: self)
+            }
+        }
+        _wasPlayingLastTimeChecked = isPlayingCaptured
     }
 }

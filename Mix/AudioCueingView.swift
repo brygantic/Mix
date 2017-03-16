@@ -206,32 +206,29 @@ class AudioCueingView: NSViewController
     private func updateCuedLists() {
         if let fader = faders[1]
         {
-            var text = fader.cued.joined(separator: "\n")
-            if let currentlyPlaying = fader.currentlyPlaying
-            {
-                text = "Playing:\n" + currentlyPlaying + "\n\nCued:\n" + text
-            }
+            let currentlyPlaying = fader.currentlyPlaying ?? ""
+            let cued = fader.cued.joined(separator: "\n")
+            
+            let text = "Playing:\n\(currentlyPlaying)\n\nCued:\n\(cued)"
             channel1CueList.stringValue = text
         }
         
         if let fader = faders[2]
         {
-            var text = fader.cued.joined(separator: "\n")
-            if let currentlyPlaying = fader.currentlyPlaying
-            {
-                text = "Playing:\n" + currentlyPlaying + "\n\nCued:\n" + text
-            }
-            channel1CueList.stringValue = text
+            let currentlyPlaying = fader.currentlyPlaying ?? ""
+            let cued = fader.cued.joined(separator: "\n")
+            
+            let text = "Playing:\n\(currentlyPlaying)\n\nCued:\n\(cued)"
+            channel2CueList.stringValue = text
         }
         
         if let fader = faders[3]
         {
-            var text = fader.cued.joined(separator: "\n")
-            if let currentlyPlaying = fader.currentlyPlaying
-            {
-                text = "Playing:\n" + currentlyPlaying + "\n\nCued:\n" + text
-            }
-            channel1CueList.stringValue = text
+            let currentlyPlaying = fader.currentlyPlaying ?? ""
+            let cued = fader.cued.joined(separator: "\n")
+            
+            let text = "Playing:\n\(currentlyPlaying)\n\nCued:\n\(cued)"
+            channel3CueList.stringValue = text
         }
     }
 }
