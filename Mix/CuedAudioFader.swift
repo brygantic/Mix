@@ -23,13 +23,18 @@ public class CuedAudioFader: FaderView {
     }
     
     public var playNotificationName: NSNotification.Name
-        {
+    {
         get { return NSNotification.Name(faderId + ":Play") }
     }
     
     public var stopNotificationName: NSNotification.Name
-        {
+    {
         get { return NSNotification.Name(faderId + ":Stop") }
+    }
+    
+    public var cuedNotificationName: NSNotification.Name
+    {
+        get { return NSNotification.Name(faderId + ":Cued") }
     }
     
     private var currentAudio: CuedAudio? = nil
@@ -57,6 +62,7 @@ public class CuedAudioFader: FaderView {
     public func cue(audio: CuedAudio)
     {
         _cuedAudios.enqueue(audio)
+        NotificationCenter.default.post(name: cuedNotificationName, object: self)
     }
 
     public var playOnFaderTrigger: Bool = false

@@ -12,7 +12,7 @@ import AudioKit
 public class FaderMidiListener : AKMIDIListener
 {
     private var _controllers: [Int:[FaderView]] = [:]
-    private var _noteOffs: [Int:[CuedAudioFader]] = [:]
+    private var _noteOffs: [MIDINoteNumber:[CuedAudioFader]] = [:]
     
     public func attach(volumeController controller: Int, toFader fader: FaderView)
     {
@@ -23,7 +23,7 @@ public class FaderMidiListener : AKMIDIListener
         _controllers[controller]!.append(fader)
     }
     
-    public func attach(noteOff noteNumber: Int, toFader fader: CuedAudioFader)
+    public func attach(noteOff noteNumber: MIDINoteNumber, toFader fader: CuedAudioFader)
     {
         if _noteOffs[noteNumber] == nil
         {
@@ -39,7 +39,7 @@ public class FaderMidiListener : AKMIDIListener
     
     public func receivedMIDINoteOff(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
     {
-        if let faders = _noteOffs[Int(noteNumber)]
+        if let faders = _noteOffs[noteNumber]
         {
             faders.forEach({ (fader: CuedAudioFader) in
                 fader.forcePlayNext()

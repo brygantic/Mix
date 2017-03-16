@@ -14,6 +14,9 @@
 		E200F5391E773E37000C2F2A /* SongList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5381E773E37000C2F2A /* SongList.swift */; };
 		E200F53B1E774125000C2F2A /* RemoteFileCuedSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F53A1E774125000C2F2A /* RemoteFileCuedSong.swift */; };
 		E200F53E1E7B1F8E000C2F2A /* FaderMidiListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */; };
+		E200F5401E7B4F1B000C2F2A /* MidiControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F53F1E7B4F1B000C2F2A /* MidiControllerInterface.swift */; };
+		E200F5421E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5411E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift */; };
+		E200F5441E7B53A6000C2F2A /* MidiFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200F5431E7B53A6000C2F2A /* MidiFunction.swift */; };
 		E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8461E6377EF00B24577 /* AppDelegate.swift */; };
 		E227D8491E6377EF00B24577 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227D8481E6377EF00B24577 /* ViewController.swift */; };
 		E227D84B1E6377EF00B24577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E227D84A1E6377EF00B24577 /* Assets.xcassets */; };
@@ -69,6 +72,9 @@
 		E200F5381E773E37000C2F2A /* SongList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongList.swift; sourceTree = "<group>"; };
 		E200F53A1E774125000C2F2A /* RemoteFileCuedSong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteFileCuedSong.swift; sourceTree = "<group>"; };
 		E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderMidiListener.swift; sourceTree = "<group>"; };
+		E200F53F1E7B4F1B000C2F2A /* MidiControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiControllerInterface.swift; sourceTree = "<group>"; };
+		E200F5411E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkaiMidiMixProfessionalMidiControllerInterface.swift; sourceTree = "<group>"; };
+		E200F5431E7B53A6000C2F2A /* MidiFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiFunction.swift; sourceTree = "<group>"; };
 		E227D8431E6377EF00B24577 /* Mix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E227D8461E6377EF00B24577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E227D8481E6377EF00B24577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				E200F53D1E7B1F8E000C2F2A /* FaderMidiListener.swift */,
+				E200F53F1E7B4F1B000C2F2A /* MidiControllerInterface.swift */,
+				E200F5411E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift */,
+				E200F5431E7B53A6000C2F2A /* MidiFunction.swift */,
 			);
 			name = Midi;
 			sourceTree = "<group>";
@@ -435,17 +444,20 @@
 				E200F5391E773E37000C2F2A /* SongList.swift in Sources */,
 				E200F5311E7584F4000C2F2A /* CuedAudio.swift in Sources */,
 				E23122131E6C87DE000A247D /* AudioElement.swift in Sources */,
+				E200F5441E7B53A6000C2F2A /* MidiFunction.swift in Sources */,
 				E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */,
 				E200F53E1E7B1F8E000C2F2A /* FaderMidiListener.swift in Sources */,
 				E200F5331E7588F6000C2F2A /* LocalFileCuedAudio.swift in Sources */,
 				E2BE94901E6C46920009CD7B /* MicFader.swift in Sources */,
 				E227D8491E6377EF00B24577 /* ViewController.swift in Sources */,
+				E200F5401E7B4F1B000C2F2A /* MidiControllerInterface.swift in Sources */,
 				E227D8471E6377EF00B24577 /* AppDelegate.swift in Sources */,
 				E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */,
 				E200F53B1E774125000C2F2A /* RemoteFileCuedSong.swift in Sources */,
 				E2BE94921E6C7EBD0009CD7B /* AudioCueingView.swift in Sources */,
 				E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */,
 				E200F5351E758978000C2F2A /* RemoteFileCuedAudio.swift in Sources */,
+				E200F5421E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
