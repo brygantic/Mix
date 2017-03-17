@@ -9,17 +9,33 @@
 import Cocoa
 import AudioKit
 
-public class CuedAudioFader: FaderView {
-
-    override public func draw(_ dirtyRect: NSRect)
+public class CuedAudioFader: FaderView
+{
+    required public init?(coder: NSCoder)
     {
-        super.draw(dirtyRect)
+        super.init(coder: coder)
+        startCheckIfStoppedTimer()
+    }
+    
+    override public init(frame: NSRect)
+    {
+        super.init(frame: frame)
+        startCheckIfStoppedTimer()
+    }
+    
+    private func startCheckIfStoppedTimer()
+    {
         Timer.scheduledTimer(
             timeInterval: 0.1,
             target: self,
             selector: #selector(checkIfStopped),
             userInfo: nil,
             repeats: true)
+    }
+    
+    override public func draw(_ dirtyRect: NSRect)
+    {
+        super.draw(dirtyRect)
     }
     
     public var playNotificationName: NSNotification.Name

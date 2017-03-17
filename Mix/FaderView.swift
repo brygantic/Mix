@@ -78,49 +78,94 @@ public class FaderView: NSView {
     }
 
     // Drawable object stuff
-    private let trackWidth = CGFloat(20)
-    private let trackTopMargin = CGFloat(40)
-    private let trackBottomMargin = CGFloat(80)
-
-    private var trackHeight: CGFloat
+    
+    private let headerHeightProportion = CGFloat(0.08)
+    private let bodyHeightProportion = CGFloat(0.6)
+    private let footerHeightProportion = CGFloat(0.24)
+    private let levelIndicatorHeightProportion = CGFloat(0.08)
+    
+    public var faderBounds : NSRect
     {
-        get { return bounds.height - trackTopMargin - trackBottomMargin }
+        get
+        {
+            return NSRect(
+                x: bounds.origin.x,
+                y: bounds.origin.y + bounds.height * footerHeightProportion,
+                width: bounds.width,
+                height: bounds.height * bodyHeightProportion
+            )
+        }
     }
-
-    private var trackX: CGFloat
+    
+    public var levelIndicatorBounds : NSRect
     {
-        get { return (bounds.width - trackWidth) / 2 }
+        get
+        {
+            return NSRect(
+                x: bounds.origin.x,
+                y: bounds.origin.y,
+                width: bounds.width,
+                height: bounds.height * levelIndicatorHeightProportion
+            )
+        }
     }
+    
+    public var footerBounds : NSRect
+    {
+        get
+        {
+            return NSRect(
+                x: bounds.origin.x,
+                y: bounds.origin.y + bounds.height * levelIndicatorHeightProportion,
+                width: bounds.width,
+                height: bounds.height * footerHeightProportion
+            )
+        }
+    }
+    
+    public var headerBounds : NSRect
+    {
+        get
+        {
+            return NSRect(
+                x: bounds.origin.x,
+                y: bounds.origin.y + bounds.height * (footerHeightProportion + bodyHeightProportion),
+                width: bounds.width,
+                height: bounds.height * headerHeightProportion)
+        }
+    }
+    
+    private var faderWidth: CGFloat { get { return faderBounds.width * 0.6 } }
+    private var faderHeight: CGFloat { get { return faderBounds.height * 0.125 } }
+    
+    private var trackWidth: CGFloat { get { return faderWidth / 3 } }
+    private var trackHeight: CGFloat { get { return faderBounds.height - faderHeight } }
 
     private var trackRect: NSRect
     {
         get
         {
+            let trackX = faderBounds.origin.x + faderBounds.width / 2 - trackWidth / 2
             return NSRect(
                 x: trackX,
-                y: trackBottomMargin,
+                y: faderBounds.origin.y + faderHeight / 2,
                 width: trackWidth,
-                height: trackHeight)
+                height: faderBounds.height - faderHeight)
         }
     }
 
-    private let faderWidth = CGFloat(50)
-    private let faderHeight = CGFloat(25)
+    
     private var faderX: CGFloat
     {
         get { return (bounds.width - faderWidth) / 2 }
     }
-    private var faderY: CGFloat
-    {
-        get { return trackBottomMargin + (trackHeight / 2) }
-    }
     private var faderMinY: CGFloat
     {
-        get { return trackBottomMargin - (faderHeight / 2) }
+        get { return trackRect.origin.y - (faderHeight / 2) }
     }
     private var faderMaxY: CGFloat
     {
-        get { return trackBottomMargin + trackHeight - (faderHeight / 2) }
+        get { return trackRect.origin.y + trackHeight - (faderHeight / 2) }
     }
     private var faderRect: NSRect
     {
@@ -168,10 +213,10 @@ public class FaderView: NSView {
     {
         get {
             return NSRect(
-                x: faderX,
-                y: 20,
-                width: faderWidth,
-                height: 20)
+                x: levelIndicatorBounds.origin.x + levelIndicatorBounds.width * 0.15,
+                y: levelIndicatorBounds.origin.y + levelIndicatorBounds.height * 0.25,
+                width: levelIndicatorBounds.width * 0.7,
+                height: levelIndicatorBounds.height * 0.5)
         }
     }
 
