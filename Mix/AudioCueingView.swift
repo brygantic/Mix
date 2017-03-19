@@ -89,7 +89,6 @@ class AudioCueingView: NSViewController
         {
             try audioElements[0].cuedAudio = LocalFileCuedAudio(fromFilePath: "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Main.aif")
             try audioElements[1].cuedAudio = LocalFileCuedAudio(fromFilePath: "/Users/tom/OneDrive/Radio/Beds/Bust-Out Brigade Out.aif")
-            try audioElements[2].cuedAudio = RemoteFileCuedAudio(fromRemoteUrl: "http://0.0.0.0:9999/get_by_search?type=song&artist=Kaiser%20Chiefs", withName: "Kaiser Chiefs")
         }
         catch
         {
@@ -178,6 +177,8 @@ class AudioCueingView: NSViewController
             selector: #selector(updateCuedLists),
             name: fader.stopNotificationName,
             object: nil)
+        
+        updateCuedLists()
     }
     
     private func onAudioElementClick(withAudioElementIndex index: Int) {

@@ -14,5 +14,4 @@ public protocol CuedAudio
     var isReady: Bool { get }
     var replay: Bool { get set }
     var displayName: String { get }
-    func tryMakePlayer() -> (succeeded: Bool, player: AKAudioPlayer?)
 }

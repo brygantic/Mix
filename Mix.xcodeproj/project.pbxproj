@@ -26,6 +26,9 @@
 		E227D8791E637C8600B24577 /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = E227D8781E637C8600B24577 /* drumloop.wav */; };
 		E23122131E6C87DE000A247D /* AudioElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23122121E6C87DE000A247D /* AudioElement.swift */; };
 		E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23122141E70A3AE000A247D /* AudioChannelSelector.swift */; };
+		E293EA361E7EBDCB0009A6FB /* LoggingMidiListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293EA351E7EBDCB0009A6FB /* LoggingMidiListener.swift */; };
+		E293EA381E7EC02F0009A6FB /* FaderFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293EA371E7EC02F0009A6FB /* FaderFunction.swift */; };
+		E293EA3A1E7ECA6E0009A6FB /* FaderMidiWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E293EA391E7ECA6D0009A6FB /* FaderMidiWriter.swift */; };
 		E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */; };
 		E2BE948A1E6C43C80009CD7B /* FaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94861E6C43C80009CD7B /* FaderView.swift */; };
 		E2BE948B1E6C43C80009CD7B /* MasterFader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BE94871E6C43C80009CD7B /* MasterFader.swift */; };
@@ -90,6 +93,9 @@
 		E227D8781E637C8600B24577 /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
 		E23122121E6C87DE000A247D /* AudioElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioElement.swift; sourceTree = "<group>"; };
 		E23122141E70A3AE000A247D /* AudioChannelSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioChannelSelector.swift; sourceTree = "<group>"; };
+		E293EA351E7EBDCB0009A6FB /* LoggingMidiListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingMidiListener.swift; sourceTree = "<group>"; };
+		E293EA371E7EC02F0009A6FB /* FaderFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderFunction.swift; sourceTree = "<group>"; };
+		E293EA391E7ECA6D0009A6FB /* FaderMidiWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderMidiWriter.swift; sourceTree = "<group>"; };
 		E2BE94851E6C43C80009CD7B /* CuedAudioFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuedAudioFader.swift; sourceTree = "<group>"; };
 		E2BE94861E6C43C80009CD7B /* FaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaderView.swift; sourceTree = "<group>"; };
 		E2BE94871E6C43C80009CD7B /* MasterFader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterFader.swift; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 				E200F53F1E7B4F1B000C2F2A /* MidiControllerInterface.swift */,
 				E200F5411E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift */,
 				E200F5431E7B53A6000C2F2A /* MidiFunction.swift */,
+				E293EA351E7EBDCB0009A6FB /* LoggingMidiListener.swift */,
+				E293EA371E7EC02F0009A6FB /* FaderFunction.swift */,
+				E293EA391E7ECA6D0009A6FB /* FaderMidiWriter.swift */,
 			);
 			name = Midi;
 			sourceTree = "<group>";
@@ -445,6 +454,8 @@
 				E200F5311E7584F4000C2F2A /* CuedAudio.swift in Sources */,
 				E23122131E6C87DE000A247D /* AudioElement.swift in Sources */,
 				E200F5441E7B53A6000C2F2A /* MidiFunction.swift in Sources */,
+				E293EA3A1E7ECA6E0009A6FB /* FaderMidiWriter.swift in Sources */,
+				E293EA381E7EC02F0009A6FB /* FaderFunction.swift in Sources */,
 				E2BE94891E6C43C80009CD7B /* CuedAudioFader.swift in Sources */,
 				E200F53E1E7B1F8E000C2F2A /* FaderMidiListener.swift in Sources */,
 				E200F5331E7588F6000C2F2A /* LocalFileCuedAudio.swift in Sources */,
@@ -456,6 +467,7 @@
 				E200F53B1E774125000C2F2A /* RemoteFileCuedSong.swift in Sources */,
 				E2BE94921E6C7EBD0009CD7B /* AudioCueingView.swift in Sources */,
 				E23122151E70A3AE000A247D /* AudioChannelSelector.swift in Sources */,
+				E293EA361E7EBDCB0009A6FB /* LoggingMidiListener.swift in Sources */,
 				E200F5351E758978000C2F2A /* RemoteFileCuedAudio.swift in Sources */,
 				E200F5421E7B5066000C2F2A /* AkaiMidiMixProfessionalMidiControllerInterface.swift in Sources */,
 			);

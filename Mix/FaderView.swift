@@ -90,7 +90,7 @@ public class FaderView: NSView {
         {
             return NSRect(
                 x: bounds.origin.x,
-                y: bounds.origin.y + bounds.height * footerHeightProportion,
+                y: bounds.origin.y + bounds.height * (footerHeightProportion + levelIndicatorHeightProportion),
                 width: bounds.width,
                 height: bounds.height * bodyHeightProportion
             )
@@ -129,14 +129,16 @@ public class FaderView: NSView {
         {
             return NSRect(
                 x: bounds.origin.x,
-                y: bounds.origin.y + bounds.height * (footerHeightProportion + bodyHeightProportion),
+                y: bounds.origin.y + bounds.height * (footerHeightProportion + bodyHeightProportion + levelIndicatorHeightProportion),
                 width: bounds.width,
                 height: bounds.height * headerHeightProportion)
         }
     }
     
     private var faderWidth: CGFloat { get { return faderBounds.width * 0.6 } }
-    private var faderHeight: CGFloat { get { return faderBounds.height * 0.125 } }
+    private var faderHeight: CGFloat {
+        get { return min(faderBounds.height * 0.125, 30) }
+    }
     
     private var trackWidth: CGFloat { get { return faderWidth / 3 } }
     private var trackHeight: CGFloat { get { return faderBounds.height - faderHeight } }

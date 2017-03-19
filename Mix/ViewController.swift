@@ -13,15 +13,12 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var MicFader: MicFader!
     
-    @IBOutlet weak var PlayerFader: CuedAudioFader!
-    @IBOutlet weak var PlayButton: NSButton!
+    @IBOutlet weak var cuedAudioFader1: CuedAudioFader!
+    @IBOutlet weak var cuedAudioFader2: CuedAudioFader!
+    @IBOutlet weak var cuedAudioFader3: CuedAudioFader!
     
     @IBOutlet weak var MasterFader: MasterFader!
-    
-    @IBAction func playSound(_ sender: NSButton) {
-        PlayerFader.forcePlayNext()
-    }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -36,8 +33,6 @@ class ViewController: NSViewController {
         wireUpAudio()
         
         openAudioWindow()
-    
-        PlayerFader.playOnFaderTrigger = true
 
         // Do any additional setup after loading the view.
     }
@@ -55,7 +50,9 @@ class ViewController: NSViewController {
             audioWindowController = NSWindowController(window: audioWindow)
             audioWindowController?.showWindow(self)
             
-            vc.ConnectCuedAudioFader(PlayerFader, withId: 1)
+            vc.ConnectCuedAudioFader(cuedAudioFader1, withId: 1)
+            vc.ConnectCuedAudioFader(cuedAudioFader2, withId: 2)
+            vc.ConnectCuedAudioFader(cuedAudioFader3, withId: 3)
         }
     }
     
@@ -63,104 +60,34 @@ class ViewController: NSViewController {
     
     private func wireUpAudio() {
         MasterFader.connect(fader: MicFader)
-        MasterFader.connect(fader: PlayerFader)
+        MasterFader.connect(fader: cuedAudioFader1)
+        MasterFader.connect(fader: cuedAudioFader2)
+        MasterFader.connect(fader: cuedAudioFader3)
         
-        attachAkaiMidiController()
+        attachAkaiMidiControllers()
     }
     
-    private var _midiIn: AKMIDI?
     private var _midiListener: FaderMidiListener?
-    private var _midiInterface: MidiControllerInterface?
+    private var _midiWriter: FaderMidiWriter?
     
-    private func attachAkaiMidiController()
+    private func attachAkaiMidiControllers()
     {
-        _midiInterface = AkaiMidiMixProfessionalMidiControllerInterface()
+        let midiInterface = AkaiMidiMixProfessionalMidiControllerInterface()
         
-        let midiListener = FaderMidiListener()
-        midiListener.attach(
-            volumeController: (_midiInterface?.getControllerNumberForFader(atIndex: 0))!,
-            toFader: MicFader)
-        midiListener.attach(
-            volumeController: (_midiInterface?.getControllerNumberForFader(atIndex: 1))!,
-            toFader: PlayerFader)
-        midiListener.attach(
-            volumeController: (_midiInterface?.getControllerNumberForMasterFader())!,
-            toFader: MasterFader)
+        let faders = [
+            0: MicFader,
+            1: cuedAudioFader1,
+            2: cuedAudioFader2,
+            3: cuedAudioFader3
+            ] as [Int : FaderView]
         
-        midiListener.attach(
-            noteOff: (_midiInterface?.getPlayInputNoteNumberForFader(atIndex: 1))!,
-            toFader: PlayerFader)
+        _midiListener = FaderMidiListener(usingInterface: midiInterface,
+                                          forIndexedFaders: faders,
+                                          andMasterFader: MasterFader)
+        _midiListener!.start()
         
-        _midiIn = AKMIDI()
-        _midiIn?.openInput()
-        _midiIn?.addListener(midiListener)
-        _midiListener = midiListener
-        
-        _midiOut = AKMIDI()
-        _midiOut?.openOutput()
-        
-        reset(midiOut: _midiOut!)
-        playerFaderToggle()
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(playerFaderToggle),
-            name: PlayerFader.cuedNotificationName,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(playerFaderToggle),
-            name: PlayerFader.playNotificationName,
-            object: nil)
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(playerFaderToggle),
-            name: PlayerFader.stopNotificationName,
-            object: nil)
-    }
-    
-    @objc private func playerFaderToggle()
-    {
-        if PlayerFader.cued.isEmpty
-        {
-            runMidiFunction((_midiInterface?.getPlayLightOffFunctionForFader(atIndex: 1))!)
-        }
-        else
-        {
-            runMidiFunction((_midiInterface?.getPlayLightOnFunctionForFader(atIndex: 1))!)
-        }
-    }
-    
-    private func runMidiFunction(_ function: (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity))
-    {
-        switch function.function
-        {
-            case .noteOn:
-                _midiOut?.sendNoteOnMessage(noteNumber: function.noteNumber, velocity: function.velocity)
-            case .noteOff:
-                _midiOut?.sendNoteOffMessage(noteNumber: function.noteNumber, velocity: function.velocity)
-        }
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-    
-    private func reset(midiOut: AKMIDI)
-    {
-        for noteNumber in 0...127
-        {
-            for channel in 0...7
-            {
-                midiOut.sendNoteOnMessage(
-                    noteNumber: MIDINoteNumber(noteNumber),
-                    velocity: 0,
-                    channel: MIDIChannel(channel))
-            }
-        }
+        _midiWriter = FaderMidiWriter(usingInterface: midiInterface,
+                                      forIndexedFaders: faders)
+        _midiWriter!.start()
     }
 }

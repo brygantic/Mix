@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -684,15 +684,15 @@
             <objects>
                 <viewController storyboardIdentifier="AudioCueingView" id="uab-li-nbr" customClass="AudioCueingView" customModule="Mix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" identifier="AudioCueingView" id="XGx-U4-01z" customClass="AudioCueingWindow">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="727"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-yo-dUe">
-                                <rect key="frame" x="0.0" y="327" width="704" height="5"/>
+                                <rect key="frame" x="0.0" y="320" width="704" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="kWt-nD-9R3" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="20" y="245" width="151" height="68"/>
+                                <rect key="frame" x="20" y="238" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="EWD-q0-Qhn">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -705,7 +705,7 @@
                                 </userDefinedRuntimeAttributes>
                             </box>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="xtE-KO-UMM" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="191" y="245" width="151" height="68"/>
+                                <rect key="frame" x="191" y="238" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="iKP-Ip-XAR">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -718,7 +718,7 @@
                                 </userDefinedRuntimeAttributes>
                             </box>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-la-knJ">
-                                <rect key="frame" x="18" y="20" width="155" height="207"/>
+                                <rect key="frame" x="18" y="13" width="155" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="WVH-xV-hPW">
                                     <font key="font" metaFont="system"/>
@@ -727,7 +727,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7v-Ny-FMe">
-                                <rect key="frame" x="189" y="20" width="155" height="207"/>
+                                <rect key="frame" x="189" y="13" width="155" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="B6k-fm-ERM">
                                     <font key="font" metaFont="system"/>
@@ -736,7 +736,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULE-XO-RGT">
-                                <rect key="frame" x="360" y="20" width="155" height="207"/>
+                                <rect key="frame" x="360" y="13" width="155" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="Multiline Label" id="hdO-61-ikl">
                                     <font key="font" metaFont="system"/>
@@ -745,17 +745,17 @@
                                 </textFieldCell>
                             </textField>
                             <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NgM-kU-LyP">
-                                <rect key="frame" x="-7" y="319" width="720" height="402"/>
+                                <rect key="frame" x="-7" y="312" width="720" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Cart Wall" identifier="1" id="1Ka-a2-T3E">
-                                        <view key="view" id="Hjn-KL-yK5">
-                                            <rect key="frame" x="10" y="33" width="700" height="356"/>
+                                        <view key="view" ambiguous="YES" id="Hjn-KL-yK5">
+                                            <rect key="frame" x="10" y="33" width="132" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box1" translatesAutoresizingMaskIntoConstraints="NO" id="1i5-06-rVc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="283" width="151" height="70"/>
+                                                    <rect key="frame" x="17" y="-73" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="HwP-be-aUH">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -771,7 +771,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box2" translatesAutoresizingMaskIntoConstraints="NO" id="dUI-Qi-bqp" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="188" y="283" width="151" height="70"/>
+                                                    <rect key="frame" x="188" y="-73" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="aom-t1-Jvb">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -787,7 +787,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box3" translatesAutoresizingMaskIntoConstraints="NO" id="oUT-vO-Tc6" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="359" y="283" width="151" height="70"/>
+                                                    <rect key="frame" x="359" y="-73" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="eVd-5m-6VZ">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -803,7 +803,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box4" translatesAutoresizingMaskIntoConstraints="NO" id="6GU-je-Ey3" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="532" y="283" width="151" height="70"/>
+                                                    <rect key="frame" x="532" y="-73" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="xcy-Xg-aXl">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -819,7 +819,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box5" translatesAutoresizingMaskIntoConstraints="NO" id="ZXT-zN-c2a" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="193" width="151" height="70"/>
+                                                    <rect key="frame" x="17" y="-163" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="68C-PO-UaI">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -835,7 +835,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box6" translatesAutoresizingMaskIntoConstraints="NO" id="g9c-LC-hA5" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="188" y="193" width="151" height="70"/>
+                                                    <rect key="frame" x="188" y="-163" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="4R6-Xq-WDd">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -851,7 +851,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box7" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-cQ-dIC" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="359" y="193" width="151" height="70"/>
+                                                    <rect key="frame" x="359" y="-163" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="1xg-TJ-V83">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -867,7 +867,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box8" translatesAutoresizingMaskIntoConstraints="NO" id="oms-JB-yK8" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="532" y="193" width="151" height="70"/>
+                                                    <rect key="frame" x="532" y="-163" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="f4a-qQ-RDt">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -883,7 +883,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box9" translatesAutoresizingMaskIntoConstraints="NO" id="dIC-kA-9QO" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="103" width="151" height="70"/>
+                                                    <rect key="frame" x="17" y="-253" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="8aY-dh-0hO">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -899,7 +899,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box10" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-2f-TrV" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="188" y="103" width="151" height="70"/>
+                                                    <rect key="frame" x="188" y="-253" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="X2R-25-11u">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -915,7 +915,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box11" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-p2-WcR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="359" y="103" width="151" height="70"/>
+                                                    <rect key="frame" x="359" y="-253" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="28Y-cX-zTy">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -931,7 +931,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box12" translatesAutoresizingMaskIntoConstraints="NO" id="EHf-lD-kYR" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="532" y="103" width="151" height="70"/>
+                                                    <rect key="frame" x="532" y="-253" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="L7p-7X-KSb">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -947,7 +947,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box13" translatesAutoresizingMaskIntoConstraints="NO" id="62e-ma-yIf" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="13" width="151" height="70"/>
+                                                    <rect key="frame" x="17" y="-343" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="ce0-WD-KJn">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -963,7 +963,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box14" translatesAutoresizingMaskIntoConstraints="NO" id="55x-S7-zXc" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="188" y="13" width="151" height="70"/>
+                                                    <rect key="frame" x="188" y="-343" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="VWL-dd-J5C">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -979,7 +979,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box15" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-Xe-Mzu" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="359" y="13" width="151" height="70"/>
+                                                    <rect key="frame" x="359" y="-343" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="qrE-Th-92H">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -995,7 +995,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </box>
                                                 <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box16" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-0A-0fL" customClass="AudioElement" customModule="Mix" customModuleProvider="target">
-                                                    <rect key="frame" x="532" y="13" width="151" height="70"/>
+                                                    <rect key="frame" x="532" y="-343" width="151" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <view key="contentView" ambiguous="YES" id="6Zx-QD-box">
                                                         <rect key="frame" x="1" y="1" width="149" height="68"/>
@@ -1014,7 +1014,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Music" identifier="2" id="hgf-Ay-Hlf">
-                                        <view key="view" ambiguous="YES" id="KKn-CD-WiH">
+                                        <view key="view" id="KKn-CD-WiH">
                                             <rect key="frame" x="10" y="33" width="700" height="356"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1082,7 +1082,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <clipView key="contentView" ambiguous="YES" id="yKK-i8-pzA">
                                                         <rect key="frame" x="1" y="0.0" width="238" height="134"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="gGV-MR-S6o" viewBased="YES" id="Zxa-Qa-NqS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="238" height="111"/>
@@ -1138,11 +1138,11 @@
                                                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                         <prototypeCellViews>
                                                                             <tableCellView id="oYd-9F-RPG">
-                                                                                <rect key="frame" x="123" y="1" width="117" height="17"/>
+                                                                                <rect key="frame" x="123" y="1" width="113" height="17"/>
                                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-n0-uOE">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="17"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="113" height="17"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="qSJ-Hk-egR">
                                                                                             <font key="font" metaFont="system"/>
@@ -1162,7 +1162,7 @@
                                                         </subviews>
                                                     </clipView>
                                                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="qzV-3y-ujO">
-                                                        <rect key="frame" x="1" y="118" width="238" height="16"/>
+                                                        <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yqH-A9-QpX">
@@ -1191,7 +1191,7 @@
                                 </tabViewItems>
                             </tabView>
                             <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="1ny-2Q-3eN" customClass="AudioChannelSelector" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="362" y="245" width="151" height="68"/>
+                                <rect key="frame" x="362" y="238" width="151" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" ambiguous="YES" id="kbp-pG-T4B">
                                     <rect key="frame" x="1" y="1" width="149" height="66"/>
@@ -1240,52 +1240,50 @@
                 </viewController>
                 <customObject id="9mf-HG-Vir" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="883.5"/>
+            <point key="canvasLocation" x="834" y="880"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Mix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="634" height="481"/>
+                        <rect key="frame" x="0.0" y="0.0" width="723" height="721"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mX0-1z-9SZ" customClass="CuedAudioFader" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="107" y="100" width="91" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="119" y="20" width="91" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2BX-Qc-inu" customClass="CuedAudioFader" customModule="Mix" customModuleProvider="target">
+                                <rect key="frame" x="218" y="20" width="91" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-pR-toF" customClass="MicFader" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="8" y="100" width="91" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="20" y="20" width="91" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </customView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgM-43-KH0">
-                                <rect key="frame" x="122" y="31" width="61" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qaq-tw-QbR">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="playSound:" target="XfG-lQ-9wD" id="y4S-Us-g38"/>
-                                </connections>
-                            </button>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-kB-LXi" customClass="MasterFader" customModule="Mix" customModuleProvider="target">
-                                <rect key="frame" x="457" y="100" width="91" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="612" y="20" width="91" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BqM-fA-eQc" customClass="CuedAudioFader" customModule="Mix" customModuleProvider="target">
+                                <rect key="frame" x="317" y="20" width="91" height="681"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </customView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="MasterFader" destination="HcN-kB-LXi" id="Rjy-uq-dmg"/>
                         <outlet property="MicFader" destination="Tia-pR-toF" id="v8q-2T-E9C"/>
-                        <outlet property="PlayButton" destination="cgM-43-KH0" id="xBo-wT-4vJ"/>
-                        <outlet property="PlayerFader" destination="mX0-1z-9SZ" id="Ybi-6c-QRQ"/>
+                        <outlet property="cuedAudioFader1" destination="mX0-1z-9SZ" id="n29-7C-3hs"/>
+                        <outlet property="cuedAudioFader2" destination="2BX-Qc-inu" id="vdt-BJ-m8j"/>
+                        <outlet property="cuedAudioFader3" destination="BqM-fA-eQc" id="al0-Lr-WHc"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="NRj-gY-L3I"/>
             </objects>
-            <point key="canvasLocation" x="75" y="760.5"/>
+            <point key="canvasLocation" x="119.5" y="880.5"/>
         </scene>
     </scenes>
 </document>

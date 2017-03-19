@@ -9,87 +9,81 @@
 import Foundation
 import AudioKit
 
-public class FaderMidiListener : AKMIDIListener
+public class FaderMidiListener : LoggingMidiListener
 {
-    private var _controllers: [Int:[FaderView]] = [:]
-    private var _noteOffs: [MIDINoteNumber:[CuedAudioFader]] = [:]
+    private let _midiInterface: MidiControllerInterface
+    private let _faders: [Int:FaderView]
+    private let _masterFader: MasterFader?
     
-    public func attach(volumeController controller: Int, toFader fader: FaderView)
-    {
-        if _controllers[controller] == nil
-        {
-            _controllers[controller] = []
-        }
-        _controllers[controller]!.append(fader)
-    }
+    private let _midiIn: AKMIDI
     
-    public func attach(noteOff noteNumber: MIDINoteNumber, toFader fader: CuedAudioFader)
+    init(usingInterface interface: MidiControllerInterface,
+         forIndexedFaders faders: [Int:FaderView],
+         andMasterFader masterFader: MasterFader?)
     {
-        if _noteOffs[noteNumber] == nil
-        {
-            _noteOffs[noteNumber] = []
-        }
-        _noteOffs[noteNumber]!.append(fader)
-    }
-    
-    public func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
-    {
-        print ("receivedMIDINoteOn; noteNumber: \(noteNumber), velocity: \(velocity), channel: \(channel)")
-    }
-    
-    public func receivedMIDINoteOff(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
-    {
-        if let faders = _noteOffs[noteNumber]
-        {
-            faders.forEach({ (fader: CuedAudioFader) in
-                fader.forcePlayNext()
-            })
-        }
+        _midiInterface = interface
+        _faders = faders
+        _masterFader = masterFader
         
-        print ("receivedMIDINoteOff; noteNumber: \(noteNumber), velocity: \(velocity), channel: \(channel)")
+        _midiIn = AKMIDI()
+
+        super.init()
     }
     
-    public func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel)
+    public func start()
     {
-        print("Controller: \(controller)")
+        _midiIn.openInput()
+        _midiIn.addListener(self)
+    }
+    
+    public override func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
+    {
+        super.receivedMIDINoteOn(noteNumber: noteNumber, velocity: velocity, channel: channel)
         
-        if let faders = _controllers[controller]
+        if let function = _midiInterface.getFunctionForNoteOn(noteNumber: noteNumber, velocity: velocity)
+        {
+            performFunction(function)
+        }
+    }
+    
+    public override func receivedMIDINoteOff(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
+    {
+        super.receivedMIDINoteOff(noteNumber: noteNumber, velocity: velocity, channel: channel)
+        
+        if let function = _midiInterface.getFunctionForNoteOff(noteNumber: noteNumber, velocity: velocity)
+        {
+            performFunction(function)
+        }
+    }
+    
+    private func performFunction(_ function: (function: FaderFunction, faderIndex: Int))
+    {
+        switch function.function
+        {
+            case .play:
+                if let fader = _faders[function.faderIndex] as? CuedAudioFader
+                {
+                    fader.forcePlayNext()
+                }
+            
+            case .stop:
+                if let fader = _faders[function.faderIndex] as? CuedAudioFader
+                {
+                    fader.stop()
+                }
+        }
+    }
+    
+    public override func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel)
+    {
+        super.receivedMIDIController(controller, value: value, channel: channel)
+        
+        let faderIndex = _midiInterface.getFaderIndex(forControllerNumber: controller)
+        
+        if let fader = _faders[faderIndex]
         {
             let volume = value / 127.0
-            
-            faders.forEach({ (fader: FaderView) in
-                fader.volume = volume
-            })
+            fader.volume = volume
         }
-    }
-    
-    public func receivedMIDIAftertouch(noteNumber: MIDINoteNumber, pressure: Int, channel: MIDIChannel)
-    {
-        print ("receivedMIDIAftertouch; noteNumber: \(noteNumber), pressure: \(pressure), channel: \(channel)")
-    }
-    
-    public func receivedMIDIAfterTouch(_ pressure: Int, channel: MIDIChannel)
-    {
-        print ("receivedMIDIAfterTouch; pressure: \(pressure), channel: \(channel)")
-    }
-    
-    public func receivedMIDIPitchWheel(_ pitchWheelValue: Int, channel: MIDIChannel)
-    {
-        print ("receivedMIDIPitchWheel; pitchWheelValue: \(pitchWheelValue), channel: \(channel)")
-    }
-    
-    public func receivedMIDIProgramChange(_ program: Int, channel: MIDIChannel)
-    {
-        print ("receivedMIDIProgramChange: program: \(program), channel: \(channel)")
-    }
-    
-    public func receivedMIDISystemCommand(_ data: [MIDIByte])
-    {
-        print ("receivedMIDISystemCommand; data: \(data)")
-    }
-    
-    public func receivedMIDISetupChange()
-    {
-        print ("receivedMIDISetupChange")
     }
 }
