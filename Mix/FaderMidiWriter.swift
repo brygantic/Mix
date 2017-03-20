@@ -50,11 +50,11 @@ public class FaderMidiWriter
     {
         for kvp in _faders
         {
-            if let fader = kvp as? (index: Int, object: CuedAudioFader)
+            if let fader = kvp.value as? CuedAudioFader
             {
                 let notificationNames = [
-                    fader.object.cuedNotificationName,
-                    fader.object.playNotificationName
+                    fader.cuedNotificationName,
+                    fader.playNotificationName
                 ]
                 
                 for name in notificationNames
@@ -74,17 +74,17 @@ public class FaderMidiWriter
     {
         for kvp in _faders
         {
-            if let fader = kvp as? (index: Int, object: CuedAudioFader)
+            if let fader = kvp.value as? CuedAudioFader
             {
-                if fader.object.cued.isEmpty
+                if !fader.cued.isEmpty
                 {
-                    let function = _midiInterface.getPlayLightOnFunctionForFader(atIndex: fader.index)
+                    let function = _midiInterface.getPlayLightOnFunctionForFader(atIndex: kvp.key)
                     
                     runMidiFunction(function)
                 }
                 else
                 {
-                    let function = _midiInterface.getPlayLightOffFunctionForFader(atIndex: fader.index)
+                    let function = _midiInterface.getPlayLightOffFunctionForFader(atIndex: kvp.key)
                     
                     runMidiFunction(function)
                 }
@@ -92,15 +92,18 @@ public class FaderMidiWriter
         }
     }
     
-    private func runMidiFunction(_ function: (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity))
+    private func runMidiFunction(_ nullableFunction: (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)?)
     {
-        switch function.function
+        if let function = nullableFunction
         {
+            switch function.function
+            {
             case .noteOn:
                 _midiOut.sendNoteOnMessage(noteNumber: function.noteNumber, velocity: function.velocity)
-            
+                
             case .noteOff:
                 _midiOut.sendNoteOffMessage(noteNumber: function.noteNumber, velocity: function.velocity)
+            }
         }
     }
 }

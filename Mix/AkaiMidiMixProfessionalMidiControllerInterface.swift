@@ -19,8 +19,12 @@ public class AkaiMidiMixProfessionalMidiControllerInterface
         return index * 4 + 19
     }
     
-    public func getFaderIndex(forControllerNumber controller: Int) -> Int
+    public func getFaderIndex(forControllerNumber controller: Int) -> Int?
     {
+        if ((controller - 19) % 4 != 0)
+        {
+            return nil
+        }
         return (controller - 19) / 4
     }
     
@@ -70,7 +74,7 @@ public class AkaiMidiMixProfessionalMidiControllerInterface
     }
     
     public func getPlayLightOnFunctionForFader(atIndex index: Int) ->
-        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)
+        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)?
     {
         return (
             .noteOn,
@@ -79,7 +83,7 @@ public class AkaiMidiMixProfessionalMidiControllerInterface
     }
     
     public func getPlayLightOffFunctionForFader(atIndex index: Int) ->
-        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)
+        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)?
     {
         return (
             .noteOn,

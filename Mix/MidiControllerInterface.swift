@@ -14,7 +14,7 @@ public protocol MidiControllerInterface
     var channelNumber: Int { get }
     
     func getControllerNumberForFader(atIndex index: Int) -> Int
-    func getFaderIndex(forControllerNumber controller: Int) -> Int
+    func getFaderIndex(forControllerNumber controller: Int) -> Int?
     
     func getControllerNumberForMasterFader() -> Int
     func isMasterFader(controllerNumber: Int) -> Bool
@@ -31,8 +31,8 @@ public protocol MidiControllerInterface
     // - may be better having an In and Out version of MidiControllerInterface
     
     func getPlayLightOnFunctionForFader(atIndex index: Int) ->
-        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)
+        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)?
     
     func getPlayLightOffFunctionForFader(atIndex index: Int) ->
-        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)
+        (function: MidiFunction, noteNumber: MIDINoteNumber, velocity: MIDIVelocity)?
 }

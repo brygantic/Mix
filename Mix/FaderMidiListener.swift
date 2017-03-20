@@ -39,7 +39,7 @@ public class FaderMidiListener : LoggingMidiListener
     public override func receivedMIDINoteOn(noteNumber: MIDINoteNumber, velocity: MIDIVelocity, channel: MIDIChannel)
     {
         super.receivedMIDINoteOn(noteNumber: noteNumber, velocity: velocity, channel: channel)
-        
+                
         if let function = _midiInterface.getFunctionForNoteOn(noteNumber: noteNumber, velocity: velocity)
         {
             performFunction(function)
@@ -53,6 +53,26 @@ public class FaderMidiListener : LoggingMidiListener
         if let function = _midiInterface.getFunctionForNoteOff(noteNumber: noteNumber, velocity: velocity)
         {
             performFunction(function)
+        }
+    }
+    
+    public override func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel)
+    {
+        super.receivedMIDIController(controller, value: value, channel: channel)
+        
+        if _midiInterface.isMasterFader(controllerNumber: controller)
+        {
+            _masterFader?.volume = value / 127.0
+            return
+        }
+        
+        if let faderIndex = _midiInterface.getFaderIndex(forControllerNumber: controller)
+        {
+            if let fader = _faders[faderIndex]
+            {
+                let volume = value / 127.0
+                fader.volume = volume
+            }
         }
     }
     
@@ -74,16 +94,5 @@ public class FaderMidiListener : LoggingMidiListener
         }
     }
     
-    public override func receivedMIDIController(_ controller: Int, value: Int, channel: MIDIChannel)
-    {
-        super.receivedMIDIController(controller, value: value, channel: channel)
-        
-        let faderIndex = _midiInterface.getFaderIndex(forControllerNumber: controller)
-        
-        if let fader = _faders[faderIndex]
-        {
-            let volume = value / 127.0
-            fader.volume = volume
-        }
-    }
+    
 }

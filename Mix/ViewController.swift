@@ -19,11 +19,13 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var MasterFader: MasterFader!
 
+    private var mixer: AKMixer?
+    private var playerOne: AKAudioPlayer?
+    private var playerTwo: AKAudioPlayer?
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
-    var player: AVPlayer? = nil
     
     var audioLevelUpdater: AKPlaygroundLoop?
     

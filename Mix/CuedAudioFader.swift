@@ -15,28 +15,61 @@ public class CuedAudioFader: FaderView
     private let stopButton = NSButton()
     private let playOnFaderTriggerButton = NSButton()
     
+    private var currentPlayer: AKAudioPlayer?
+    private var nextPlayer: AKAudioPlayer?
+    
+    private var currentAudio: CuedAudio? = nil
+    private let _cuedAudios = Queue<CuedAudio>()
+    
     required public init?(coder: NSCoder)
     {
         super.init(coder: coder)
-        startCheckIfStoppedTimer()
         configureButtons()
+        instantiatePlayers()
     }
     
     override public init(frame: NSRect)
     {
         super.init(frame: frame)
-        startCheckIfStoppedTimer()
         configureButtons()
+        instantiatePlayers()
     }
     
-    private func startCheckIfStoppedTimer()
+    private func instantiatePlayers()
     {
-        Timer.scheduledTimer(
-            timeInterval: 0.1,
-            target: self,
-            selector: #selector(checkIfStopped),
-            userInfo: nil,
-            repeats: true)
+        do
+        {
+            currentPlayer = try AKAudioPlayer(file: AKAudioFile(readFileName: "drumloop.wav", baseDir: .resources), looping: false, completionHandler: stop)
+            nextPlayer = try AKAudioPlayer(file: AKAudioFile(readFileName: "drumloop.wav", baseDir: .resources), looping: false, completionHandler: stop)
+            _mixer.connect(currentPlayer!)
+            _mixer.connect(nextPlayer!)
+        }
+        catch
+        {
+            Swift.print("Something went really wrong")
+        }
+    }
+    
+    private func eagerlyLoad()
+    {
+        if let frontOfQueue = _cuedAudios.front
+        {
+            if nextPlayer!.audioFile != frontOfQueue.audioFile
+            {
+                OperationQueue().addOperation()
+                {
+                    do
+                    {
+                        try self.nextPlayer?.replace(file: frontOfQueue.audioFile!)
+                    }
+                    catch
+                    {
+                        Swift.print("Could not load file for \(frontOfQueue.displayName)")
+                    }
+                }
+                
+            }
+        }
     }
     
     private var buttonWidth: CGFloat { get { return footerBounds.width * 0.9 } }
@@ -159,12 +192,6 @@ public class CuedAudioFader: FaderView
         get { return NSNotification.Name(faderId + ":Cued") }
     }
     
-    private var currentAudio: CuedAudio? = nil
-    private var currentPlayer: AKAudioPlayer? = nil
-    private var nextPlayer: AKAudioPlayer? = nil
-    
-    private let _cuedAudios = Queue<CuedAudio>()
-    
     public var currentlyPlaying: String? {
         get { return currentAudio?.displayName }
     }
@@ -186,6 +213,7 @@ public class CuedAudioFader: FaderView
     {
         _cuedAudios.enqueue(audio)
         NotificationCenter.default.post(name: cuedNotificationName, object: self)
+        eagerlyLoad()
     }
 
     public var playOnFaderTrigger: Bool = false
@@ -226,36 +254,20 @@ public class CuedAudioFader: FaderView
 
     public func forcePlayNext() -> Bool
     {
-        if _cuedAudios.front?.isReady != nil && (_cuedAudios.front?.isReady)!
+        if _cuedAudios.front?.isReady == true
         {
             let nextAudio = _cuedAudios.dequeue()!
-            do
-            {
-                if nextPlayer == nil
-                {
-                    nextPlayer = try AKAudioPlayer(file: nextAudio.audioFile!, looping: false, completionHandler: stop)
-                    _mixer.connect(nextPlayer!)
-                }
-                else
-                {
-                    try nextPlayer!.replace(file: nextAudio.audioFile!)
-                }
-            }
-            catch
-            {
-                return false
-            }
             
             nextPlayer!.start()
-            currentPlayer?.stop()
-            
-            currentAudio = nextAudio
-            
+            currentPlayer!.stop()
+
             let temp = currentPlayer
             currentPlayer = nextPlayer
+            currentAudio = nextAudio
             nextPlayer = temp
-            
+
             NotificationCenter.default.post(name: playNotificationName, object: self)
+            eagerlyLoad()
             return true
         }
         return false
@@ -268,22 +280,5 @@ public class CuedAudioFader: FaderView
             currentPlayer?.stop()
         }
         NotificationCenter.default.post(name: stopNotificationName, object: self)
-    }
-    
-    private var _wasPlayingLastTimeChecked: Bool = false
-    @objc private func checkIfStopped()
-    {
-        let isPlayingCaptured = isPlaying
-        
-        if _wasPlayingLastTimeChecked
-        {
-            if !isPlayingCaptured
-            {
-                currentPlayer = nil
-                currentAudio = nil
-                NotificationCenter.default.post(name: stopNotificationName, object: self)
-            }
-        }
-        _wasPlayingLastTimeChecked = isPlayingCaptured
     }
 }
